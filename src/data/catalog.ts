@@ -30,6 +30,8 @@ export interface Creator {
   name: string;
   handle: string;
   bio: string;
+  /** Their own site, shown on the About sheet. Absent when they have not added one. */
+  website?: string;
 }
 
 export interface Piece {
@@ -61,6 +63,8 @@ export interface Look {
   occasion: string;
   season: string;
   caption: string;
+  /** Where Visit takes people: the link the creator attached when posting. Absent when there is none. */
+  link?: string;
   pieces: Piece[];
   ai: boolean;
   editorial?: { kicker: string; headline: HeadlinePart[] };
@@ -124,7 +128,10 @@ export const products: Record<string, Product> = Object.fromEntries(
 );
 
 export const creators: Record<string, Creator> = Object.fromEntries(
-  raw.creators.map((c) => [c.id, { id: c.id, name: c.name, handle: c.handle, bio: c.bio }]),
+  raw.creators.map((c) => [
+    c.id,
+    { id: c.id, name: c.name, handle: c.handle, bio: c.bio, website: 'website' in c ? String(c.website) : undefined },
+  ]),
 );
 
 const SLOT_ORDER: Slot[] = ['outer', 'top', 'bottom', 'shoes', 'bag'];
@@ -154,6 +161,7 @@ export const looks: Record<string, Look> = Object.fromEntries(
       occasion: l.occasion,
       season: l.season,
       caption: l.caption,
+      link: 'link' in l ? String(l.link) : undefined,
       pieces,
       ai: false,
       editorial: 'editorial' in l ? (l.editorial as Look['editorial']) : undefined,
@@ -178,6 +186,11 @@ export function formatPrice(value: number) {
 export function formatDelta(delta: number) {
   if (delta === 0) return 'Same price';
   return `${delta < 0 ? '−' : '+'}${formatPrice(Math.abs(delta))}`;
+}
+
+/** Where Visit takes someone from a Look: its own link, else its creator's site, else nowhere. */
+export function lookLink(look: Look): string | undefined {
+  return look.link ?? creators[look.creatorId]?.website;
 }
 
 export function identifiedProducts(look: Look): Product[] {

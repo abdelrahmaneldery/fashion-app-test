@@ -10,9 +10,10 @@ Postgres with row-level security, auth and storage. The app talks to the databas
 | `migrations/…01_core_schema.sql` | Markets, price bands, profiles, retailers, brands, products (with image embeddings), Looks, pieces, follows, saves, Lookbooks, blocks, reports, outbound clicks |
 | `migrations/…02_functions_and_security.sql` | Feed, price bands, alternatives (vector search), Lookbook contents, account deletion, triggers, all access rules |
 | `migrations/…03_storage.sql` | `looks` and `avatars` buckets; uploads only into your own folder |
+| `migrations/20260928000001_look_links.sql` | A Look's `link` (where Visit site goes) and a profile's `website`; both must be web addresses |
 | `migrations/20260927000001_look_audience.sql` | Who a Look is for (Everyone, Followers, Only me), enforced on the Look, its pieces, the feed, Lookbooks and its photo |
 | `seed.sql` | Generated from `src/data/catalog.json` by `npm run seed`, so the backend starts with today's app content |
-| `tests/` | 39 tests on real Postgres 18 + pgvector (PGlite) with Supabase's roles and grants: `npm run test:db` |
+| `tests/` | 43 tests on real Postgres 18 + pgvector (PGlite) with Supabase's roles and grants: `npm run test:db` |
 
 ## Rules the database enforces
 
@@ -27,6 +28,8 @@ Postgres with row-level security, auth and storage. The app talks to the databas
   (`can_view_look`), and only the creator can change it.
 - **Look photos are private files:** the `looks` bucket is not public, so a Followers or Only me photo cannot
   be fetched by address. The app loads Look photos through signed URLs (`createSignedUrl`). Avatars stay public.
+- **Links out:** a Look's `link` and a profile's `website` are optional, and when present must be an `http`
+  or `https` web address with a real host (no `javascript:`, `data:` or bare words). People set only their own.
 - **Blocks:** blocking hides that creator's Looks from you, and only from you.
 - **Account deletion:** in-app deletion cascades through everything the person owns (App Store requirement).
 - **Outbound clicks:** anyone can log them; nobody can read them from the app.

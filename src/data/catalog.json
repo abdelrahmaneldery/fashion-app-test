@@ -10,7 +10,8 @@
         "skin": "#B8876A",
         "hair": "#231A15",
         "top": "#EFE7D6"
-      }
+      },
+      "website": "https://amirasaleh.example.com"
     },
     {
       "id": "lina",
@@ -22,7 +23,8 @@
         "skin": "#C99A7C",
         "hair": "#3A2A20",
         "top": "#3E3E42"
-      }
+      },
+      "website": "https://linamansour.example.com"
     },
     {
       "id": "omar",
@@ -34,7 +36,8 @@
         "skin": "#8E6248",
         "hair": "#141414",
         "top": "#8C8C8C"
-      }
+      },
+      "website": "https://omarkhaled.example.com"
     },
     {
       "id": "nour",
@@ -46,7 +49,8 @@
         "skin": "#B07A5A",
         "hair": "#9A4A2A",
         "top": "#EDE6D8"
-      }
+      },
+      "website": "https://nourhassan.example.com"
     },
     {
       "id": "karim",
@@ -58,7 +62,8 @@
         "skin": "#A57558",
         "hair": "#111111",
         "top": "#121212"
-      }
+      },
+      "website": "https://karimadel.example.com"
     },
     {
       "id": "sara",
@@ -70,7 +75,8 @@
         "skin": "#C28E6E",
         "hair": "#2B1E17",
         "top": "#8FA3BF"
-      }
+      },
+      "website": "https://saraelmasry.example.com"
     }
   ],
   "products": [
@@ -828,7 +834,8 @@
           "x": 0.3,
           "y": 0.55
         }
-      ]
+      ],
+      "link": "https://amirasaleh.example.com/soft-tailoring"
     },
     {
       "id": "omar-underpass",
@@ -869,7 +876,8 @@
           "x": 0.5,
           "y": 0.86
         }
-      ]
+      ],
+      "link": "https://omarkhaled.example.com/underpass"
     },
     {
       "id": "lina-grey-minimal",
@@ -910,7 +918,8 @@
           "x": 0.45,
           "y": 0.92
         }
-      ]
+      ],
+      "link": "https://linamansour.example.com/grey-minimal"
     },
     {
       "id": "karim-street-polo",
@@ -951,7 +960,8 @@
           "x": 0.52,
           "y": 0.91
         }
-      ]
+      ],
+      "link": "https://karimadel.example.com/street-polo"
     },
     {
       "id": "karim-lobby",
@@ -998,7 +1008,8 @@
           "x": 0.56,
           "y": 0.93
         }
-      ]
+      ],
+      "link": "https://karimadel.example.com/lobby"
     },
     {
       "id": "nour-colonnade",
@@ -1050,7 +1061,8 @@
           "x": 0.4,
           "y": 0.93
         }
-      ]
+      ],
+      "link": "https://nourhassan.example.com/colonnade"
     },
     {
       "id": "amira-rooftop-edit",
@@ -1115,7 +1127,8 @@
             "text": " tailoring edit"
           }
         ]
-      }
+      },
+      "link": "https://amirasaleh.example.com/rooftop-edit"
     },
     {
       "id": "omar-washed-cargo",
@@ -1162,7 +1175,8 @@
           "x": 0.52,
           "y": 0.4
         }
-      ]
+      ],
+      "link": "https://omarkhaled.example.com/washed-cargo"
     },
     {
       "id": "lina-oatmeal-knit",
@@ -1203,7 +1217,8 @@
           "x": 0.52,
           "y": 0.92
         }
-      ]
+      ],
+      "link": "https://linamansour.example.com/oatmeal-knit"
     },
     {
       "id": "sara-denim-uniform",
@@ -1247,7 +1262,8 @@
           "x": 0.35,
           "y": 0.83
         }
-      ]
+      ],
+      "link": "https://saraelmasry.example.com/denim-uniform"
     },
     {
       "id": "amira-black-tailoring",
@@ -1297,7 +1313,8 @@
           "x": 0.36,
           "y": 0.47
         }
-      ]
+      ],
+      "link": "https://amirasaleh.example.com/black-tailoring"
     },
     {
       "id": "amira-summer-linen",
@@ -1341,7 +1358,8 @@
           "x": 0.5,
           "y": 0.93
         }
-      ]
+      ],
+      "link": "https://amirasaleh.example.com/summer-linen"
     },
     {
       "id": "omar-white-hood",
@@ -1376,7 +1394,8 @@
           "x": 0.5,
           "y": 0.88
         }
-      ]
+      ],
+      "link": "https://omarkhaled.example.com/white-hood"
     }
   ],
   "feedOrder": [

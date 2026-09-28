@@ -14,7 +14,7 @@ import { styles as styleList } from '@/data/catalog';
 import { importSources, type ImportSourceKey } from '@/data/importSources';
 import { useOnEscape } from '@/hooks/useOnEscape';
 import { useSafeAreaInsets } from '@/hooks/useSafeAreaInsets';
-import { hostOf } from '@/lib/links';
+import { hostOf, normalizeUrl } from '@/lib/links';
 import { useSeamStore } from '@/store/useSeamStore';
 import { useTheme, useThemeColorMeta } from '@/theme/theme';
 import { space } from '@/theme/tokens';
@@ -55,6 +55,15 @@ export function Create() {
   const audience = useSeamStore((s) => s.postAudience);
   const setAudience = useSeamStore((s) => s.setPostAudience);
   const [choosingAudience, setChoosingAudience] = useState(false);
+  // The Look's own link: where Visit site takes people. Tidied when the field is left, checked on Post.
+  const [link, setLink] = useState('');
+  const [linkError, setLinkError] = useState(false);
+  const linkRef = useRef<HTMLInputElement>(null);
+  const tidyLink = () => {
+    const tidy = normalizeUrl(link);
+    if (tidy === null) setLinkError(true);
+    else setLink(tidy);
+  };
   const shownTo = audienceByKey[audience];
   const AudienceGlyph = shownTo.icon;
 
@@ -127,6 +136,11 @@ export function Create() {
   };
 
   const post = () => {
+    if (normalizeUrl(link) === null) {
+      setLinkError(true);
+      linkRef.current?.focus();
+      return;
+    }
     showToast({
       message: `Posting arrives with the creator API. This Look is set to ${shownTo.label}.`,
       bottom: insets.bottom + space.s24,
@@ -285,6 +299,44 @@ export function Create() {
                     </Text>
                   </button>
                 ))}
+            </div>
+
+            <Text variant="label" color="textMuted" as="h2" className={styles.group}>
+              Link
+            </Text>
+            <div className={styles.link}>
+              <input
+                ref={linkRef}
+                className={linkError ? `${styles.linkInput} ${styles.linkInvalid}` : styles.linkInput}
+                value={link}
+                type="url"
+                inputMode="url"
+                autoCapitalize="none"
+                autoCorrect="off"
+                spellCheck={false}
+                placeholder="yoursite.com/this-look"
+                enterKeyHint="done"
+                aria-label="Link"
+                aria-invalid={linkError}
+                aria-describedby="look-link-help"
+                onChange={(e) => {
+                  setLink(e.target.value);
+                  setLinkError(false);
+                }}
+                onBlur={tidyLink}
+              />
+              <Text
+                id="look-link-help"
+                variant="caption"
+                color={linkError ? undefined : 'textMuted'}
+                as="p"
+                role={linkError ? 'alert' : undefined}
+                style={linkError ? { color: colors.error } : undefined}
+              >
+                {linkError
+                  ? "That link isn't a web address. Check it, or leave the field empty."
+                  : 'Where Visit site takes people from your Look, like your blog post or shop. Optional.'}
+              </Text>
             </div>
 
             {/* The last choice before Post, always on show, so nobody posts to more people than they meant to. */}

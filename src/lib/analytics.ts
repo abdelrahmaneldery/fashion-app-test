@@ -17,6 +17,7 @@ export type AnalyticsEvent =
   | { name: 'follow_toggled'; creatorId: string; following: boolean }
   | { name: 'look_liked'; lookId: string; liked: boolean; from: 'button' | 'double_tap' }
   | { name: 'comment_posted'; lookId: string }
+  | { name: 'look_visited'; lookId: string; from: 'page' | 'about_sheet' }
   | { name: 'import_signed_in'; source: string }
   | { name: 'import_disconnected'; source: string }
   | { name: 'images_imported'; source: string; count: number };

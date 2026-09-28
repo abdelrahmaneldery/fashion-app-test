@@ -19,6 +19,8 @@ export type SourceMark = {
 export type ImportSource = {
   key: string;
   name: string;
+  /** A shorter name for tight spots, like the label on a photo tile. Defaults to the name. */
+  shortName?: string;
   /** Where the platform's own sign-in page lives, shown in the address bar while you are on it. */
   domain: string;
   /** One line under the logo on Post a Look. */
@@ -58,6 +60,7 @@ export const importSources = [
   {
     key: 'vestiaire',
     name: 'Vestiaire Collective',
+    shortName: 'Vestiaire',
     domain: 'vestiairecollective.com',
     line: 'Bring in a Look from your Vestiaire Collective listings.',
     // Shorter than the others: two long words, all set at cap height.

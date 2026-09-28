@@ -17,7 +17,7 @@ export function Tag({ text, glyph, className, style }: { text: string; glyph?: b
   return (
     <span className={[styles.tag, className].filter(Boolean).join(' ')} style={style}>
       {glyph ? <PiecesGlyph /> : null}
-      <Text variant="microUpper" style={{ color: onPhoto.textPrimary }}>
+      <Text variant="microUpper" lines={1} style={{ color: onPhoto.textPrimary }}>
         {text}
       </Text>
     </span>

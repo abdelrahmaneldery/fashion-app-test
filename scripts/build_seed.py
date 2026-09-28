@@ -56,6 +56,7 @@ def main():
             f"{q(json.dumps({'handle': c['handle'].lstrip('@'), 'display_name': c['name']}))}::jsonb, now(), now());")
         out.append(
             f"update public.profiles set is_creator = true, bio = {q(c['bio'])}, market_code = 'EG', "
+            f"website = {q(c['website']) if c.get('website') else 'null'}, "
             f"avatar_path = {q(uid('creator', c['id']) + '/avatar.jpg')} where id = {q(uid('creator', c['id']))};")
     out.append("")
 
@@ -87,9 +88,10 @@ def main():
         w, h = Image.open(ROOT / "assets/images/looks" / f"{look_id}.jpg").size
         out.append(
             "insert into public.looks (id, creator_id, image_path, width, height, caption, style, occasion, season, "
-            "status, market_code, published_at) values ("
+            "link, status, market_code, published_at) values ("
             f"{q(uid('look', look_id))}, {q(creator)}, {q(creator + '/' + look_id + '.jpg')}, {w}, {h}, "
-            f"{q(look['caption'])}, {q(look['style'])}, {q(look['occasion'])}, {q(look['season'])}, 'published', 'EG', "
+            f"{q(look['caption'])}, {q(look['style'])}, {q(look['occasion'])}, {q(look['season'])}, "
+            f"{q(look['link']) if look.get('link') else 'null'}, 'published', 'EG', "
             f"now() - interval '{i} hours');")
         pieces = sorted(look["pieces"], key=lambda pc: SLOT_ORDER.index(pc["slot"]))
         vals = []

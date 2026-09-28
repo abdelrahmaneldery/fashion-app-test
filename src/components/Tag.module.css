@@ -4,6 +4,9 @@
   gap: var(--space-4);
   align-self: flex-start;
   height: 26px;
+  /* Always one line: a long label ends in an ellipsis inside the pill rather than breaking out of it. */
+  max-width: 100%;
+  min-width: 0;
   padding: 0 10px;
   border-radius: var(--radius-full);
   background: rgba(11, 11, 12, 0.6);

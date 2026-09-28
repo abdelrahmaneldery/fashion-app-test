@@ -37,8 +37,11 @@ export function useSaveAction(kind: SaveRef['kind'], id: string, theme: ThemeNam
 type Props = {
   kind: SaveRef['kind'];
   id: string;
-  /** overlay: 34 px glyph disc on photos · icon: plain 44 · outlined: 52 square · full: the action-bar button */
-  variant: 'overlay' | 'icon' | 'outlined' | 'full';
+  /**
+   * overlay: 34 px glyph disc on photos · icon: plain 44 · outlined: 52 square · full: a wide labelled
+   * button · pill: a compact "Save" at the end of an action row
+   */
+  variant: 'overlay' | 'icon' | 'outlined' | 'full' | 'pill';
   toastBottom: number;
   className?: string;
   style?: CSSProperties;
@@ -49,6 +52,19 @@ export function SaveButton({ kind, id, variant, toastBottom, className, style, f
   const { name, colors } = useTheme();
   const { saved, onClick } = useSaveAction(kind, id, name, toastBottom);
   const label = saved ? 'Saved. Change Lookbooks' : 'Save';
+
+  if (variant === 'pill') {
+    return (
+      <Button
+        label={saved ? 'Saved' : 'Save'}
+        variant={saved ? 'secondary' : 'primary'}
+        onClick={onClick}
+        className={className}
+        style={{ height: 44, padding: '0 22px', ...style }}
+        aria-label={label}
+      />
+    );
+  }
 
   if (variant === 'full') {
     return (

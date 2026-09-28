@@ -39,7 +39,10 @@
   background: var(--c-surfaceSubtle);
 }
 
-/* A white rounded square that floats over a photograph — back, share, more. */
+/*
+ * A dark rounded square that floats over a photograph — back, share, more. Pinned to the dark
+ * treatment in either theme, like every control that sits on a picture, so it reads on any image.
+ */
 .floating {
   display: flex;
   align-items: center;
@@ -48,8 +51,15 @@
   width: 44px;
   height: 44px;
   border-radius: var(--radius-button);
-  background: #ffffff;
+  background: rgba(11, 11, 12, 0.82);
+  backdrop-filter: blur(8px);
   box-shadow: var(--shadow-float);
+  transition: background-color 120ms ease;
+}
+
+.floating:not(:disabled):hover,
+.floating:not(:disabled):active {
+  background: rgba(11, 11, 12, 0.94);
 }
 
 .circle {

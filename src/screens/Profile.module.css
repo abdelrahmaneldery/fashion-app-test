@@ -131,6 +131,7 @@ a.stat:hover {
   position: absolute;
   left: 6px;
   bottom: 6px;
+  max-width: calc(100% - 12px);
 }
 
 .runtime {

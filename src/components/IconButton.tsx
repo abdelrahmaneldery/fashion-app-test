@@ -8,7 +8,7 @@ type Props = {
   onClick?: () => void;
   'aria-label': string;
   /**
-   * overlay: dark circle on a photograph · floating: white rounded square on a photograph ·
+   * overlay: dark circle on a photograph · floating: dark rounded square on a photograph ·
    * plain: the glyph alone · outlined: a 52 px disc on a surface
    */
   variant?: 'overlay' | 'floating' | 'plain' | 'outlined';
@@ -39,7 +39,7 @@ export function IconButton({
   const overlay = variant === 'overlay';
   const outlined = variant === 'outlined';
   const floating = variant === 'floating';
-  const fg = color ?? (overlay ? onPhoto.textPrimary : floating ? '#0B0B0C' : colors.iconPrimary);
+  const fg = color ?? (overlay || floating ? onPhoto.textPrimary : colors.iconPrimary);
 
   return (
     <button

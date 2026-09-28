@@ -1,8 +1,8 @@
 """Generate SEAM placeholder imagery from src/data/catalog.json.
 
-Look images are now real photographs, kept in assets/images/looks, and this
-script leaves any file it finds there alone. Packshots and avatars are still
-flat stand-ins and are redrawn every run.
+Look images are now real photographs, kept in assets/images/looks, and avatars
+are cut from them by scripts/crop_avatars.py; this script leaves any file it
+finds in either folder alone. Packshots are still flat stand-ins, redrawn every run.
 
 To add a Look: drop its photograph in as <look-id>.jpg, set the look's "ratio"
 to the photograph's own, author each piece's "x"/"y" against it in
@@ -197,6 +197,11 @@ def draw_packshot(prod, path, zoom=False):
 
 
 def draw_avatar(cr):
+    # Profile pictures are cut from the creators' own Look photographs (scripts/crop_avatars.py), so
+    # one that is already here is never redrawn. Delete one (or pass --force) to get a drawn face back.
+    path = OUT / "avatars" / f"{cr['id']}.jpg"
+    if path.exists() and "--force" not in sys.argv:
+        return
     a = cr["avatar"]
     S = 300
     img = Image.new("RGB", (S, S), hex2rgb(a["bg"]))
@@ -205,7 +210,7 @@ def draw_avatar(cr):
     d.rectangle([132, 170, 168, 225], fill=hex2rgb(a["skin"]))
     d.ellipse([95, 50, 205, 170], fill=hex2rgb(a["hair"]))
     d.ellipse([105, 72, 195, 190], fill=hex2rgb(a["skin"]))
-    img.save(OUT / "avatars" / f"{cr['id']}.jpg", quality=88)
+    img.save(path, quality=88)
 
 
 def main():

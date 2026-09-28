@@ -271,6 +271,36 @@ describe('who a Look is for', () => {
   });
 });
 
+describe('links: where Visit site goes', () => {
+  let W;
+  before(async () => {
+    W = await createUser(db, 'links@test.dev');
+  });
+  test('seeded Looks and creators carry their links', async () => {
+    const [look] = await U(db, 'select link from public.looks where id = $1', [await lookId('amira-soft-tailoring')]);
+    assert.equal(look.link, 'https://amirasaleh.example.com/soft-tailoring');
+    const [amira] = await U(db, `select website from public.profiles where handle = 'amira.saleh'`);
+    assert.equal(amira.website, 'https://amirasaleh.example.com');
+  });
+  test('a Look may carry a web link, or none', async () => {
+    const [{ link }] = await as(db, W, `insert into public.looks (creator_id, image_path, width, height, link) values ($1::uuid, $1::text || '/l.jpg', 1, 1, 'https://shop.example.com/coat?c=1') returning link`, [W]);
+    assert.equal(link, 'https://shop.example.com/coat?c=1');
+    await as(db, W, `insert into public.looks (creator_id, image_path, width, height) values ($1::uuid, $1::text || '/n.jpg', 1, 1)`, [W]);
+  });
+  test('anything that is not a web address is refused', async () => {
+    for (const bad of ['javascript:alert(1)', 'ftp://files.example.com/a', 'https://localhost', 'example.com/no-scheme', 'https://exa mple.com']) {
+      await rejects(as(db, W, `insert into public.looks (creator_id, image_path, width, height, link) values ($1::uuid, $1::text || '/b.jpg', 1, 1, $2)`, [W, bad]), /check constraint/, bad);
+    }
+  });
+  test('people set their own website, not anyone else’s', async () => {
+    await as(db, W, `update public.profiles set website = 'https://me.example.com' where id = $1`, [W]);
+    assert.equal((await U(db, 'select website from public.profiles where id = $1', [W]))[0].website, 'https://me.example.com');
+    const changed = await as(db, A, `update public.profiles set website = 'https://evil.example.com' where id = $1 returning id`, [W]);
+    assert.equal(changed.length, 0);
+    await rejects(as(db, W, `update public.profiles set website = 'data:text/html,hi' where id = $1`, [W]), /check constraint/);
+  });
+});
+
 describe('account deletion', () => {
   test('anonymous callers cannot call it', async () => {
     await rejects(as(db, null, 'select public.delete_my_account()'), /permission denied/);

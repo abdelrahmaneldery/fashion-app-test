@@ -10,6 +10,7 @@
     "typecheck": "tsc --noEmit",
     "lint": "eslint .",
     "images": "python3 scripts/generate_placeholders.py",
+    "avatars": "python3 scripts/crop_avatars.py",
     "seed": "python3 scripts/build_seed.py",
     "test:db": "node --test supabase/tests/*.test.mjs",
     "db:types": "supabase gen types typescript --linked > src/lib/database.types.ts"

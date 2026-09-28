@@ -47,63 +47,94 @@
   transition: opacity 150ms ease;
 }
 
-.creator {
+/* Under the photo, as a pin reads: the actions, whose it is, what it is, where it came from. */
+.info {
   display: flex;
   flex-direction: column;
-  gap: var(--space-12);
-  padding: var(--space-24) var(--layout-margin) var(--space-32);
-}
-
-.creatorRow {
-  display: flex;
-  align-items: center;
-  gap: var(--space-12);
-}
-
-.creatorLink {
-  display: flex;
-  align-items: center;
-  gap: var(--space-12);
-  flex: 1;
-  min-width: 0;
-  text-decoration: none;
-  color: inherit;
-  transition: opacity 120ms ease;
-}
-
-.creatorLink:hover {
-  opacity: 0.8;
-}
-
-.creatorText {
-  flex: 1;
-  min-width: 0;
-}
-
-/* A heart and a thread, nudged so their glyphs line up with the avatar's edge above. */
-.social {
-  display: flex;
-  align-items: center;
   gap: var(--space-8);
-  margin: -4px 0 -4px -8px;
+  padding: var(--space-12) var(--layout-margin) var(--space-32);
 }
 
-.socialButton {
+/* Like, comment, share, more; Save alone on the right. */
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  margin: 0 0 var(--space-4) -8px;
+}
+
+.action {
   display: flex;
   align-items: center;
   gap: 6px;
+  min-width: var(--layout-hit);
   min-height: var(--layout-hit);
   padding: 0 var(--space-8);
   border-radius: var(--radius-full);
   transition: opacity 120ms ease;
 }
 
-.socialButton:hover {
+.action:hover {
+  opacity: 0.7;
+}
+
+.actionGlyph {
+  display: flex;
+}
+
+.save {
+  margin-left: auto;
+}
+
+/* Whose Look it is: a small face and a name, the way to their profile. */
+.byline {
+  display: flex;
+  align-items: center;
+  gap: var(--space-8);
+  align-self: flex-start;
+  max-width: 100%;
+  min-height: 32px;
+  color: inherit;
+  text-decoration: none;
+  transition: opacity 120ms ease;
+}
+
+.byline:hover {
   opacity: 0.75;
 }
 
-.socialGlyph {
+/* Only on the most-liked Looks: a small mark, the claim, and what it rests on. */
+.popular {
   display: flex;
+  align-items: center;
+  gap: var(--space-8);
+  min-width: 0;
+}
+
+.popularIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 22px;
+  width: 22px;
+  height: 22px;
+  border-radius: 6px;
+  background: var(--c-surfaceSubtle);
+}
+
+.visit {
+  width: 100%;
+  margin-top: var(--space-8);
+}
+
+/* A filled grey pill, as in a pin: the card surface would vanish against a light page. */
+.info .visit {
+  background: var(--c-surfaceSubtle);
+}
+
+.info .visit:hover,
+.info .visit:active {
+  background: var(--c-borderSubtle);
 }
 
 .preview {
@@ -142,10 +173,35 @@
   opacity: 0.75;
 }
 
+/* The caption as the Look's title: one line, with a small disc that opens the About sheet. */
 .caption {
+  display: flex;
+  align-items: center;
+  gap: var(--space-12);
+  width: 100%;
   text-align: left;
-  max-width: 640px;
   cursor: pointer;
+  transition: opacity 120ms ease;
+}
+
+.caption:hover {
+  opacity: 0.8;
+}
+
+.captionText {
+  flex: 1;
+  min-width: 0;
+}
+
+.captionMore {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 28px;
+  width: 28px;
+  height: 28px;
+  border-radius: var(--radius-full);
+  background: var(--c-surfaceSubtle);
 }
 
 .sectionHead {
@@ -155,63 +211,6 @@
   padding: 0 var(--layout-margin) var(--space-16);
 }
 
-/*
- * The summary the whole screen adds up to. Every other card on the feed sits flat; this one is
- * lifted, so the eye lands on it once the pieces have been read.
- */
-.total {
-  display: flex;
-  flex-direction: column;
-  margin: 0 var(--layout-margin) var(--space-32);
-  padding: var(--space-16) var(--space-16) var(--space-12);
-  border-radius: var(--radius-card);
-  background: var(--c-surfaceCard);
-  box-shadow: var(--shadow-float);
-}
-
-.totalHead {
-  display: flex;
-  align-items: baseline;
-  justify-content: space-between;
-  gap: var(--space-8);
-}
-
-/* The number is the point of the card, so it is set at display size. */
-.totalPrice {
-  margin-top: 2px;
-}
-
-.totalPieces {
-  display: flex;
-  align-items: center;
-  gap: var(--space-8);
-  margin-top: var(--space-12);
-  padding-top: var(--space-12);
-  border-top: var(--layout-hairline) solid var(--c-borderSubtle);
-}
-
-.totalThumbs {
-  display: flex;
-  gap: 5px;
-  flex: 1;
-  min-width: 0;
-  overflow: hidden;
-}
-
-.totalThumb {
-  display: block;
-  flex: 0 0 34px;
-  width: 34px;
-  height: 42px;
-  overflow: hidden;
-  border-radius: var(--radius-xs);
-  background: var(--c-surfaceTile);
-}
-
-.totalRange {
-  flex: 0 0 auto;
-}
-
 .railHead {
   padding: 0 var(--layout-margin) var(--space-12);
 }
@@ -219,19 +218,6 @@
 .rail {
   gap: var(--space-8);
   padding: 0 var(--layout-margin);
-}
-
-.actionBar {
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 20;
-  display: flex;
-  align-items: center;
-  gap: var(--space-8);
-  padding: 0 var(--layout-margin);
-  background: var(--c-bgPrimary);
 }
 
 /* The photo's own scrim: it leaves exactly as the compact bar arrives. */

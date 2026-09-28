@@ -1,8 +1,8 @@
-import { palette } from '@/theme/tokens';
+import { onPhoto } from '@/theme/theme';
 import styles from './SimilarButton.module.css';
 
 /** A lens with a spark in it: search inside this photograph rather than across the app. */
-function LensGlyph({ size = 22, color = palette.ink }: { size?: number; color?: string }) {
+function LensGlyph({ size = 22, color = onPhoto.textPrimary }: { size?: number; color?: string }) {
   return (
     <svg width={size} height={size} viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false">
       <circle cx="10.2" cy="11" r="6.2" stroke={color} strokeWidth="2" />

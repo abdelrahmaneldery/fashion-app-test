@@ -173,7 +173,8 @@ export function Profile() {
           mine.length ? (
             <div className={styles.grid}>
               {mine.map((image) => {
-                const from = importSourceByKey[image.source].name;
+                const source = importSourceByKey[image.source];
+                const from = source.name;
                 return (
                   <Link
                     key={image.id}
@@ -184,7 +185,7 @@ export function Profile() {
                     style={{ width: cell, height: cell * cardPhoto.tile }}
                   >
                     <Image src={importedImageSrc(image)} transition={0} />
-                    <Tag text={from} className={styles.source} />
+                    <Tag text={source.shortName ?? from} className={styles.source} />
                   </Link>
                 );
               })}

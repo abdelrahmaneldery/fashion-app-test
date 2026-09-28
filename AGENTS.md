@@ -14,6 +14,7 @@ npm run typecheck    # tsc --noEmit
 npm run lint         # eslint
 npm run test:db      # Supabase schema/rules tests
 npm run images       # redraw the stand-in catalogue images
+npm run avatars      # cut creators' profile pictures from their Look photos
 npm run seed         # rebuild supabase/seed.sql from the catalogue
 ```
 

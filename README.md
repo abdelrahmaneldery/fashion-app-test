@@ -22,7 +22,8 @@ Opens on <http://localhost:8081>. Checks: `npm run typecheck` · `npm run lint` 
 | `npm run preview` | Serve the built bundle locally |
 | `npm run typecheck` | `tsc --noEmit` |
 | `npm run lint` | ESLint over `src/` |
-| `npm run images` | Redraw the stand-in catalogue images |
+| `npm run images` | Redraw the stand-in catalogue images (keeps real Look photos and avatars) |
+| `npm run avatars` | Cut each creator's profile picture from one of their Look photos |
 | `npm run seed` | Rebuild `supabase/seed.sql` from the catalogue |
 | `npm run test:db` | Schema, access-rule and function tests (pglite) |
 
@@ -153,6 +154,10 @@ Components carry their own styles in a sibling `*.module.css`, addressing tokens
 
 ## Swapping in real photography
 
+**Profile pictures** are cut from the creators' own Look photographs by `scripts/crop_avatars.py`:
+one Look and one head-and-shoulders square per creator, listed in its `CROPS` table. Change an
+entry and run `npm run avatars`. It never upscales, so a small source photo gives a smaller file.
+
 The images in `assets/images/` are generated stand-ins. Replacing them is three steps, and the
 catalogue drives all of it.
 
@@ -184,7 +189,8 @@ hotspot sits slightly off on a particular Look.
 
 ## Known gaps, by design for this build
 
-- Shop links go to `https://example.com/shop/<id>` until retailer feeds exist. Find similar shows a
+- Shop links go to `https://example.com/shop/<id>` until retailer feeds exist. Creators' websites and each
+  Look's Visit site link are `<name>.example.com` stand-ins in `catalog.json` for the same reason. Find similar shows a
   "next build" message.
 - Not built yet: the card-to-Look zoom transition, the packshot morph into Product Detail, long-press
   "See fewer", and See all alternatives.

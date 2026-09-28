@@ -5,9 +5,18 @@ import { ActionMenu } from '@/components/ActionMenu';
 import { Avatar } from '@/components/Avatar';
 import { Button } from '@/components/Button';
 import { CommentsSheet, handleOf } from '@/components/CommentsSheet';
+import { LookAboutSheet } from '@/components/LookAboutSheet';
 import { Eyelet, placeTags, type EyeletState, type TagPlacement } from '@/components/Eyelet';
 import { IconButton } from '@/components/IconButton';
-import { CaretLeftIcon, ChatCircleIcon, DotsThreeIcon, ExportIcon, HeartIcon } from '@/components/icons';
+import {
+  CaretDownIcon,
+  CaretLeftIcon,
+  ChatCircleIcon,
+  DotsThreeIcon,
+  HeartIcon,
+  ShareNetworkIcon,
+  TrendUpIcon,
+} from '@/components/icons';
 import { Image } from '@/components/Image';
 import { LookCard } from '@/components/LookCard';
 import { Masonry } from '@/components/Masonry';
@@ -22,11 +31,10 @@ import { Text } from '@/components/Text';
 import {
   creators,
   formatPrice,
-  identifiedProducts,
+  feed,
   lookImage,
-  productImage,
   looks,
-  lookTotal,
+  lookLink,
   moreFromCreator,
   products,
   similarLooks,
@@ -36,7 +44,8 @@ import { useElementSize } from '@/hooks/useElementSize';
 import { useSafeAreaInsets } from '@/hooks/useSafeAreaInsets';
 import { useViewport } from '@/hooks/useViewport';
 import { track } from '@/lib/analytics';
-import { haptics, share } from '@/lib/platform';
+import { hostOf } from '@/lib/links';
+import { haptics, openExternal, share } from '@/lib/platform';
 import { baselineLikes, formatCount, ME } from '@/lib/social';
 import { useSeamStore } from '@/store/useSeamStore';
 import { useTheme, useThemeColorMeta } from '@/theme/theme';
@@ -83,8 +92,6 @@ function Detail({ look }: { look: Look }) {
   useThemeColorMeta();
 
   const creator = creators[look.creatorId];
-  const following = useSeamStore((s) => s.following.includes(look.creatorId));
-  const toggleFollow = useSeamStore((s) => s.toggleFollow);
   const hasSeenBreath = useSeamStore((s) => s.hasSeenBreath);
   const markBreathSeen = useSeamStore((s) => s.markBreathSeen);
   const showToast = useSeamStore((s) => s.showToast);
@@ -102,9 +109,8 @@ function Detail({ look }: { look: Look }) {
   const [detent, setDetent] = useState(0);
   const [imageReady, setImageReady] = useState(false);
   const [breath] = useState(!hasSeenBreath);
-  const [captionOpen, setCaptionOpen] = useState(false);
+  const [aboutOpen, setAboutOpen] = useState(false);
   const [pastHero, setPastHero] = useState(false);
-  const [pastSimilar, setPastSimilar] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [commentsOpen, setCommentsOpen] = useState(false);
   const [focusComposer, setFocusComposer] = useState(false);
@@ -122,22 +128,27 @@ function Detail({ look }: { look: Look }) {
     [allComments, look.id],
   );
   const likeCount = baselineLikes(look.id) + (liked ? 1 : 0);
+  // Popular: among the three most-liked Looks in the feed, on the same counts the heart shows.
+  const popular = useMemo(
+    () =>
+      [...feed]
+        .sort((a, b) => baselineLikes(b.id) - baselineLikes(a.id))
+        .slice(0, 3)
+        .some((l) => l.id === look.id),
+    [look.id],
+  );
 
-  const similarRef = useRef<HTMLDivElement>(null);
   const scrollY = useRef(0);
-  const similarY = useRef(Number.MAX_SAFE_INTEGER);
   const restoreY = useRef(0);
 
   // The bar is as tall as the controls in it, which are one touch target each.
   const topBarBottom = insets.top + layout.hit;
-  const actionBarH = 64 + insets.bottom;
   const mediumH = pieceSheetMedium(H) + insets.bottom;
-  const toastBottom = actionBarH + space.s8;
+  const toastBottom = insets.bottom + space.s16;
 
   // Compact bar after half the hero has scrolled away; the action bar steps aside at Similar Looks.
   // Both also yield to the open piece sheet, so they are derived rather than stored.
   const compactVisible = pastHero && !sheetOpen;
-  const barHidden = pastSimilar || sheetOpen || commentsOpen;
   const overPhoto = sheetOpen || piecesOpen;
 
   const smoothScrollTo = (y: number) => scrollRef.current?.scrollTo({ top: y, behavior: 'smooth' });
@@ -157,23 +168,7 @@ function Detail({ look }: { look: Look }) {
     const y = e.currentTarget.scrollTop;
     scrollY.current = y;
     setPastHero(y > heroH * 0.5);
-    setPastSimilar(y + topBarBottom >= similarY.current);
   };
-
-  // The Similar Looks heading is the line where the action bar gives way.
-  useEffect(() => {
-    const measure = () => {
-      const el = similarRef.current;
-      const container = scrollRef.current;
-      if (!el || !container) return;
-      similarY.current =
-        el.getBoundingClientRect().top - container.getBoundingClientRect().top + container.scrollTop + space.s48;
-    };
-    measure();
-    const observer = new ResizeObserver(measure);
-    if (scrollRef.current) observer.observe(scrollRef.current);
-    return () => observer.disconnect();
-  }, [scrollRef, look.id]);
 
   useEffect(() => track({ name: 'look_viewed', lookId: look.id }), [look.id]);
 
@@ -279,9 +274,11 @@ function Detail({ look }: { look: Look }) {
     if (message) showToast({ message, bottom: toastBottom });
   };
 
-  const shopping = identifiedProducts(look);
-  const identified = shopping.length;
-  const prices = shopping.map((p) => p.price).sort((a, b) => a - b);
+  const link = lookLink(look);
+  const visit = (url: string, from: 'page' | 'about_sheet') => {
+    track({ name: 'look_visited', lookId: look.id, from });
+    openExternal(url);
+  };
   const more = moreFromCreator(look);
   const similar = similarLooks(look).slice(0, 8);
 
@@ -292,7 +289,7 @@ function Detail({ look }: { look: Look }) {
         onScroll={onScroll}
         className={`scroll ${styles.feed} ${sheetOpen ? styles.locked : ''}`}
       >
-        <div style={{ paddingBottom: actionBarH + space.s32 }}>
+        <div style={{ paddingBottom: insets.bottom + space.s32 }}>
           {/* The photograph is the title to the eye; this is the title to a screen reader. */}
           <Text variant="label" as="h1" className="srOnly">
             {`${look.style} Look by ${creator.name}`}
@@ -365,35 +362,12 @@ function Detail({ look }: { look: Look }) {
             </div>
           </div>
 
-          {/* Creator */}
-          <div className={styles.creator}>
-            <div className={styles.creatorRow}>
-              <Link to={`/creator/${creator.id}`} className={styles.creatorLink} aria-label={`Open ${creator.name}`}>
-                <Avatar creatorId={creator.id} size={40} />
-                <span className={styles.creatorText}>
-                  <Text variant="bodyMedium" as="div">
-                    {creator.name}
-                  </Text>
-                  <Text variant="caption" color="textMuted" as="div">
-                    {creator.handle}
-                  </Text>
-                </span>
-              </Link>
-              <Button
-                label={following ? 'Following' : 'Follow'}
-                variant="tertiary"
-                muted={following}
-                onClick={() => {
-                  track({ name: 'follow_toggled', creatorId: creator.id, following: !following });
-                  toggleFollow(creator.id);
-                }}
-              />
-            </div>
-            {/* The Look's reception: a heart and a thread, the way a feed has always done it. */}
-            <div className={styles.social}>
+          {/* Under the photo: act on it, see whose it is, what it is, and where it came from. */}
+          <div className={styles.info}>
+            <div className={styles.actions}>
               <button
                 type="button"
-                className={styles.socialButton}
+                className={styles.action}
                 aria-pressed={liked}
                 aria-label={`${liked ? 'Unlike' : 'Like'} this Look, ${formatCount(likeCount)} likes`}
                 onClick={() => {
@@ -402,7 +376,7 @@ function Detail({ look }: { look: Look }) {
                 }}
               >
                 <motion.span
-                  className={styles.socialGlyph}
+                  className={styles.actionGlyph}
                   animate={liked ? { scale: [1, 1.28, 1] } : { scale: 1 }}
                   transition={{ duration: 0.28 }}
                 >
@@ -414,29 +388,78 @@ function Detail({ look }: { look: Look }) {
               </button>
               <button
                 type="button"
-                className={styles.socialButton}
+                className={styles.action}
                 aria-label={`Open comments, ${comments.length} so far`}
                 onClick={() => openComments(false)}
               >
-                <span className={styles.socialGlyph}>
+                <span className={styles.actionGlyph}>
                   <ChatCircleIcon size={26} color={colors.iconPrimary} />
                 </span>
-                <Text variant="bodyMedium" tabular>
-                  {formatCount(comments.length)}
-                </Text>
+                {comments.length ? (
+                  <Text variant="bodyMedium" tabular>
+                    {formatCount(comments.length)}
+                  </Text>
+                ) : null}
               </button>
+              <button type="button" className={styles.action} aria-label="Share Look" onClick={onShare}>
+                <span className={styles.actionGlyph}>
+                  <ShareNetworkIcon size={26} color={colors.iconPrimary} />
+                </span>
+              </button>
+              <button type="button" className={styles.action} aria-label="More options" onClick={() => setMenuOpen(true)}>
+                <span className={styles.actionGlyph}>
+                  <DotsThreeIcon size={26} weight="bold" color={colors.iconPrimary} />
+                </span>
+              </button>
+              <SaveButton kind="look" id={look.id} variant="pill" toastBottom={toastBottom} className={styles.save} />
             </div>
+
+            <Link to={`/creator/${creator.id}`} className={styles.byline}>
+              <Avatar creatorId={creator.id} size={22} />
+              <Text variant="captionMedium" lines={1}>
+                {creator.name}
+              </Text>
+            </Link>
+
+            {/* The caption reads as the Look's title; the arrow opens everything else about it. */}
             <button
               type="button"
               className={styles.caption}
-              aria-expanded={captionOpen}
-              onClick={() => setCaptionOpen((v) => !v)}
+              aria-haspopup="dialog"
+              aria-label={`${look.caption} More about this Look`}
+              onClick={() => setAboutOpen(true)}
             >
-              <Text variant="body" color="textSecondary" lines={captionOpen ? undefined : 3}>
+              <Text variant="h3" lines={1} className={styles.captionText}>
                 {look.caption}
               </Text>
+              <span className={styles.captionMore} aria-hidden="true">
+                <CaretDownIcon size={16} weight="bold" color={colors.iconPrimary} />
+              </span>
             </button>
-            <Text variant="caption" color="textMuted">{`${look.style} · ${look.occasion} · ${look.season}`}</Text>
+
+            {popular ? (
+              <div className={styles.popular}>
+                <span className={styles.popularIcon} aria-hidden="true">
+                  <TrendUpIcon size={14} weight="bold" color={colors.iconPrimary} />
+                </span>
+                <Text variant="captionMedium">Popular on SEAM</Text>
+                <Text variant="caption" color="textMuted" lines={1}>
+                  One of the most-liked Looks right now
+                </Text>
+              </div>
+            ) : null}
+
+            {/* Where the Look came from: the link its creator attached, named before you go. */}
+            {link ? (
+              <Button
+                variant="secondary"
+                label="Visit site"
+                aria-label={`Visit site, ${hostOf(link)}`}
+                onClick={() => visit(link, 'page')}
+                className={styles.visit}
+              />
+            ) : null}
+
             {comments.length ? (
               <div className={styles.preview}>
                 {comments.length > 2 ? (
@@ -464,37 +487,6 @@ function Detail({ look }: { look: Look }) {
                 Add a comment…
               </Text>
             </button>
-          </div>
-
-          {/* What the Look costs, and the pieces the number is made of. */}
-          <div className={styles.total}>
-            <div className={styles.totalHead}>
-              <Text variant="label" color="textMuted">
-                Look total
-              </Text>
-              <Text variant="micro" color="textMuted" tabular>
-                {`${identified} of ${look.pieces.length} identified`}
-              </Text>
-            </div>
-            <Text variant="displayXL" as="div" tabular className={styles.totalPrice}>
-              {formatPrice(lookTotal(look))}
-            </Text>
-            {shopping.length ? (
-              <div className={styles.totalPieces}>
-                <div className={styles.totalThumbs}>
-                  {shopping.map((p) => (
-                    <span key={p.id} className={styles.totalThumb}>
-                      <Image src={productImage(p.id)} transition={0} />
-                    </span>
-                  ))}
-                </div>
-                <Text variant="micro" color="textMuted" tabular className={styles.totalRange}>
-                  {prices[0] === prices[prices.length - 1]
-                    ? formatPrice(prices[0])
-                    : `${formatPrice(prices[0])} – ${formatPrice(prices[prices.length - 1])}`}
-                </Text>
-              </div>
-            ) : null}
           </div>
 
           {/* Shop the Look */}
@@ -529,7 +521,7 @@ function Detail({ look }: { look: Look }) {
           ) : null}
 
           {/* Similar Looks */}
-          <div ref={similarRef} className={styles.sectionHead} style={{ paddingTop: space.s48 }}>
+          <div className={styles.sectionHead} style={{ paddingTop: space.s48 }}>
             <Text variant="h1" as="h2">
               Similar Looks
             </Text>
@@ -537,18 +529,6 @@ function Detail({ look }: { look: Look }) {
           <Masonry looks={similar} containerWidth={W} toastBottom={insets.bottom + space.s16} />
         </div>
       </div>
-
-      {/* Sticky action bar */}
-      <motion.div
-        className={styles.actionBar}
-        style={{ height: actionBarH, paddingBottom: insets.bottom, pointerEvents: barHidden ? 'none' : 'auto' }}
-        initial={false}
-        animate={{ y: barHidden ? actionBarH + 2 : 0 }}
-        transition={{ duration: 0.2 }}
-      >
-        <SaveButton kind="look" id={look.id} variant="full" toastBottom={toastBottom} style={{ flex: 1 }} />
-        <IconButton icon={ExportIcon} variant="outlined" aria-label="Share Look" onClick={onShare} />
-      </motion.div>
 
       <PieceSheet
         look={look}
@@ -587,7 +567,6 @@ function Detail({ look }: { look: Look }) {
           aria-label="Back"
           onClick={() => (sheetOpen ? closeSheet() : navigate(-1))}
         />
-        <IconButton icon={DotsThreeIcon} variant="floating" weight="bold" aria-label="More options" onClick={() => setMenuOpen(true)} />
       </div>
 
       {/* Compact top bar once the hero has scrolled away */}
@@ -605,10 +584,17 @@ function Detail({ look }: { look: Look }) {
           {`Look by ${creator.name}`}
         </Text>
         <div className={styles.compactActions}>
-          {barHidden ? <SaveButton kind="look" id={look.id} variant="icon" toastBottom={insets.bottom + space.s16} /> : null}
+          <SaveButton kind="look" id={look.id} variant="icon" toastBottom={toastBottom} />
           <IconButton icon={DotsThreeIcon} disc weight="bold" aria-label="More options" onClick={() => setMenuOpen(true)} />
         </div>
       </motion.div>
+
+      <LookAboutSheet
+        look={look}
+        open={aboutOpen}
+        onClose={() => setAboutOpen(false)}
+        onVisit={(url) => visit(url, 'about_sheet')}
+      />
 
       <CommentsSheet
         look={look}
