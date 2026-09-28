@@ -1,0 +1,37 @@
+// The Phosphor icons SEAM uses. Light by default, Fill for "on" states (active tab, saved).
+// Deep imports keep the bundle to these icons instead of the full ~1,500-icon set.
+export type { Icon, IconWeight } from '@phosphor-icons/react';
+export { ArrowUpRightIcon } from '@phosphor-icons/react/ArrowUpRight';
+export { ArrowsLeftRightIcon } from '@phosphor-icons/react/ArrowsLeftRight';
+export { BookmarkSimpleIcon } from '@phosphor-icons/react/BookmarkSimple';
+export { BookmarksIcon } from '@phosphor-icons/react/Bookmarks';
+export { CameraIcon } from '@phosphor-icons/react/Camera';
+export { CaretLeftIcon } from '@phosphor-icons/react/CaretLeft';
+export { CaretRightIcon } from '@phosphor-icons/react/CaretRight';
+export { ChatCircleIcon } from '@phosphor-icons/react/ChatCircle';
+export { CheckIcon } from '@phosphor-icons/react/Check';
+export { DeviceMobileIcon } from '@phosphor-icons/react/DeviceMobile';
+export { DotsThreeIcon } from '@phosphor-icons/react/DotsThree';
+export { ExportIcon } from '@phosphor-icons/react/Export';
+export { GearIcon } from '@phosphor-icons/react/Gear';
+export { GlobeSimpleIcon } from '@phosphor-icons/react/GlobeSimple';
+export { HeartIcon } from '@phosphor-icons/react/Heart';
+export { HouseIcon } from '@phosphor-icons/react/House';
+export { ImageSquareIcon } from '@phosphor-icons/react/ImageSquare';
+export { ImagesIcon } from '@phosphor-icons/react/Images';
+export { LinkSimpleIcon } from '@phosphor-icons/react/LinkSimple';
+export { ListIcon } from '@phosphor-icons/react/List';
+export { LockSimpleIcon } from '@phosphor-icons/react/LockSimple';
+export { MagnifyingGlassIcon } from '@phosphor-icons/react/MagnifyingGlass';
+export { PencilSimpleIcon } from '@phosphor-icons/react/PencilSimple';
+export { PlayIcon } from '@phosphor-icons/react/Play';
+export { PlusIcon } from '@phosphor-icons/react/Plus';
+export { ScanIcon } from '@phosphor-icons/react/Scan';
+export { SlidersHorizontalIcon as SlidersIcon } from '@phosphor-icons/react/SlidersHorizontal';
+export { SparkleIcon } from '@phosphor-icons/react/Sparkle';
+export { SquaresFourIcon } from '@phosphor-icons/react/SquaresFour';
+export { UploadSimpleIcon } from '@phosphor-icons/react/UploadSimple';
+export { UserIcon } from '@phosphor-icons/react/User';
+export { UsersIcon } from '@phosphor-icons/react/Users';
+export { VideoCameraIcon } from '@phosphor-icons/react/VideoCamera';
+export { XIcon } from '@phosphor-icons/react/X';

@@ -1,0 +1,62 @@
+.root {
+  position: fixed;
+  inset: 0;
+  z-index: 40;
+  pointer-events: none;
+}
+
+.scrim {
+  position: absolute;
+  inset: 0;
+  background: #0b0b0c;
+}
+
+.scrimTappable {
+  pointer-events: auto;
+  cursor: default;
+  width: 100%;
+  height: 100%;
+}
+
+.sheet {
+  position: absolute;
+  left: 50%;
+  /* A phone sheet stays a phone sheet on a laptop: centred and capped, never a full-width band. */
+  width: min(100%, var(--sheet-max-width));
+  margin-left: calc(min(100%, var(--sheet-max-width)) / -2);
+  display: flex;
+  flex-direction: column;
+  border-top-left-radius: var(--radius-sheet);
+  border-top-right-radius: var(--radius-sheet);
+  background: var(--c-bgPrimary);
+  box-shadow: var(--shadow-sheet);
+  overflow: hidden;
+  pointer-events: auto;
+  touch-action: none;
+}
+
+.grabberZone {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 20px;
+  cursor: grab;
+}
+
+.grabberZone:active {
+  cursor: grabbing;
+}
+
+.grabber {
+  width: 40px;
+  height: 4px;
+  margin-top: 8px;
+  border-radius: var(--radius-full);
+  background: var(--c-borderStrong);
+}
+
+.body {
+  position: relative;
+  flex: 1;
+  min-height: 0;
+}

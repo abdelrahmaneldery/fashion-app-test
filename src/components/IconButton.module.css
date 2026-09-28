@@ -1,0 +1,73 @@
+.hit {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  width: var(--layout-hit);
+  height: var(--layout-hit);
+  border-radius: var(--radius-full);
+  transition: opacity 120ms ease, background-color 120ms ease;
+}
+
+/* On a plain surface the glyph gets a disc; on a photograph it gets the overlay circle. */
+.disc {
+  background: var(--c-surfaceSubtle);
+}
+
+.plain:not(:disabled):hover {
+  opacity: 0.75;
+}
+
+.plain:not(:disabled):active {
+  opacity: 0.6;
+}
+
+.outlined {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 52px;
+  width: 52px;
+  height: 52px;
+  border-radius: var(--radius-full);
+  background: var(--c-surfaceCard);
+  transition: background-color 120ms ease;
+}
+
+.outlined:not(:disabled):hover,
+.outlined:not(:disabled):active {
+  background: var(--c-surfaceSubtle);
+}
+
+/* A white rounded square that floats over a photograph — back, share, more. */
+.floating {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 44px;
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-button);
+  background: #ffffff;
+  box-shadow: var(--shadow-float);
+}
+
+.circle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-full);
+  background: rgba(11, 11, 12, 0.6);
+  transition: background-color 120ms ease;
+}
+
+.hit:not(:disabled):hover .circle,
+.hit:not(:disabled):active .circle {
+  background: rgba(11, 11, 12, 0.8);
+}
+
+.disabled {
+  opacity: 0.3;
+}

@@ -1,0 +1,1397 @@
+{
+  "creators": [
+    {
+      "id": "amira",
+      "name": "Amira Saleh",
+      "handle": "@amira.saleh",
+      "bio": "Tailoring, linen and long days in Cairo.",
+      "avatar": {
+        "bg": "#D6CFC4",
+        "skin": "#B8876A",
+        "hair": "#231A15",
+        "top": "#EFE7D6"
+      }
+    },
+    {
+      "id": "lina",
+      "name": "Lina Mansour",
+      "handle": "@linamansour",
+      "bio": "Quiet colours, good knitwear.",
+      "avatar": {
+        "bg": "#BDBBB6",
+        "skin": "#C99A7C",
+        "hair": "#3A2A20",
+        "top": "#3E3E42"
+      }
+    },
+    {
+      "id": "omar",
+      "name": "Omar Khaled",
+      "handle": "@omark",
+      "bio": "Street uniforms and stairwells.",
+      "avatar": {
+        "bg": "#7A7B80",
+        "skin": "#8E6248",
+        "hair": "#141414",
+        "top": "#8C8C8C"
+      }
+    },
+    {
+      "id": "nour",
+      "name": "Nour Hassan",
+      "handle": "@nour.hassan",
+      "bio": "Modest dressing, long lines.",
+      "avatar": {
+        "bg": "#D9C4A3",
+        "skin": "#B07A5A",
+        "hair": "#9A4A2A",
+        "top": "#EDE6D8"
+      }
+    },
+    {
+      "id": "karim",
+      "name": "Karim Adel",
+      "handle": "@karimadel",
+      "bio": "Evening tailoring, mostly black.",
+      "avatar": {
+        "bg": "#3A342E",
+        "skin": "#A57558",
+        "hair": "#111111",
+        "top": "#121212"
+      }
+    },
+    {
+      "id": "sara",
+      "name": "Sara El-Masry",
+      "handle": "@saraelmasry",
+      "bio": "Denim, cotton, weekends.",
+      "avatar": {
+        "bg": "#C9CCD1",
+        "skin": "#C28E6E",
+        "hair": "#2B1E17",
+        "top": "#8FA3BF"
+      }
+    }
+  ],
+  "products": [
+    {
+      "id": "halden-linen-blazer",
+      "brand": "HALDEN",
+      "name": "Linen single-breasted blazer",
+      "price": 420,
+      "stock": "in",
+      "retailer": "Rue Market",
+      "category": "outer",
+      "color": "#CDBB9B",
+      "label": "JACKET",
+      "alternatives": [
+        "maren-linen-blazer",
+        "ode-cotton-blazer",
+        "vestra-hemp-blazer",
+        "arlo-silk-linen-blazer"
+      ],
+      "colorName": "warm oatmeal beige"
+    },
+    {
+      "id": "noor-poplin-shirt",
+      "brand": "NOOR STUDIO",
+      "name": "Cotton poplin shirt",
+      "price": 135,
+      "stock": "low",
+      "retailer": "Rue Market",
+      "category": "top",
+      "color": "#EFE7D6",
+      "label": "SHIRT",
+      "alternatives": [
+        "callow-oxford-shirt",
+        "maren-poplin-shirt",
+        "ode-silk-shirt"
+      ],
+      "colorName": "soft ecru"
+    },
+    {
+      "id": "halden-pleated-trousers",
+      "brand": "HALDEN",
+      "name": "Pleated wide-leg trousers",
+      "price": 260,
+      "stock": "out",
+      "retailer": "Rue Market",
+      "category": "bottom",
+      "color": "#4A3024",
+      "label": "TROUSERS",
+      "alternatives": [
+        "callow-wide-trousers",
+        "ode-linen-trousers",
+        "maren-pleated-trousers",
+        "halden-pleated-trousers-taupe",
+        "vestra-wool-trousers",
+        "arlo-tailored-trousers"
+      ],
+      "colorName": "deep chocolate brown"
+    },
+    {
+      "id": "orro-penny-loafers",
+      "brand": "ORRO",
+      "name": "Suede penny loafers",
+      "price": 310,
+      "stock": "in",
+      "retailer": "Rue Market",
+      "category": "shoes",
+      "color": "#8A5A36",
+      "label": "SHOES",
+      "alternatives": [
+        "callow-suede-loafer",
+        "maren-suede-loafer",
+        "vestra-suede-loafer",
+        "halden-penny-loafer",
+        "arlo-suede-loafer",
+        "ode-leather-loafer"
+      ],
+      "colorName": "medium tobacco brown"
+    },
+    {
+      "id": "maren-linen-blazer",
+      "brand": "MAREN",
+      "name": "Relaxed linen blazer",
+      "price": 180,
+      "stock": "in",
+      "retailer": "Maren",
+      "category": "outer",
+      "color": "#D2C3A6",
+      "label": "JACKET",
+      "colorName": "warm oatmeal beige"
+    },
+    {
+      "id": "ode-cotton-blazer",
+      "brand": "ODE",
+      "name": "Cotton twill blazer",
+      "price": 395,
+      "stock": "in",
+      "retailer": "Ode",
+      "category": "outer",
+      "color": "#C4B08F",
+      "label": "JACKET",
+      "colorName": "warm oatmeal beige"
+    },
+    {
+      "id": "vestra-hemp-blazer",
+      "brand": "VESTRA",
+      "name": "Hemp-blend blazer",
+      "price": 460,
+      "stock": "in",
+      "retailer": "Vestra",
+      "category": "outer",
+      "color": "#BFAE8E",
+      "label": "JACKET",
+      "colorName": "warm oatmeal beige"
+    },
+    {
+      "id": "arlo-silk-linen-blazer",
+      "brand": "ARLO",
+      "name": "Silk-linen blazer",
+      "price": 690,
+      "stock": "in",
+      "retailer": "Arlo",
+      "category": "outer",
+      "color": "#D8C8AA",
+      "label": "JACKET",
+      "colorName": "sand"
+    },
+    {
+      "id": "callow-oxford-shirt",
+      "brand": "CALLOW",
+      "name": "Oxford cotton shirt",
+      "price": 65,
+      "stock": "in",
+      "retailer": "Callow",
+      "category": "top",
+      "color": "#F1ECE1",
+      "label": "SHIRT",
+      "colorName": "warm ivory"
+    },
+    {
+      "id": "maren-poplin-shirt",
+      "brand": "MAREN",
+      "name": "Oversized poplin shirt",
+      "price": 140,
+      "stock": "in",
+      "retailer": "Maren",
+      "category": "top",
+      "color": "#EDE5D3",
+      "label": "SHIRT",
+      "colorName": "soft ecru"
+    },
+    {
+      "id": "ode-silk-shirt",
+      "brand": "ODE",
+      "name": "Washed silk shirt",
+      "price": 210,
+      "stock": "in",
+      "retailer": "Ode",
+      "category": "top",
+      "color": "#E9DFC9",
+      "label": "SHIRT",
+      "colorName": "cream"
+    },
+    {
+      "id": "callow-wide-trousers",
+      "brand": "CALLOW",
+      "name": "Wide cotton trousers",
+      "price": 120,
+      "stock": "in",
+      "retailer": "Callow",
+      "category": "bottom",
+      "color": "#56392B",
+      "label": "TROUSERS",
+      "colorName": "chestnut brown"
+    },
+    {
+      "id": "ode-linen-trousers",
+      "brand": "ODE",
+      "name": "Pleated linen trousers",
+      "price": 225,
+      "stock": "in",
+      "retailer": "Ode",
+      "category": "bottom",
+      "color": "#5B4032",
+      "label": "TROUSERS",
+      "colorName": "chestnut brown"
+    },
+    {
+      "id": "maren-pleated-trousers",
+      "brand": "MAREN",
+      "name": "Double-pleat trousers",
+      "price": 240,
+      "stock": "in",
+      "retailer": "Maren",
+      "category": "bottom",
+      "color": "#42291E",
+      "label": "TROUSERS",
+      "colorName": "dark rust brown"
+    },
+    {
+      "id": "halden-pleated-trousers-taupe",
+      "brand": "HALDEN",
+      "name": "Pleated wide-leg trousers, taupe",
+      "price": 260,
+      "stock": "in",
+      "retailer": "Rue Market",
+      "category": "bottom",
+      "color": "#8A7663",
+      "label": "TROUSERS",
+      "colorName": "olive green"
+    },
+    {
+      "id": "vestra-wool-trousers",
+      "brand": "VESTRA",
+      "name": "Tropical wool trousers",
+      "price": 275,
+      "stock": "low",
+      "retailer": "Vestra",
+      "category": "bottom",
+      "color": "#3D2A21",
+      "label": "TROUSERS",
+      "colorName": "dark rust brown"
+    },
+    {
+      "id": "arlo-tailored-trousers",
+      "brand": "ARLO",
+      "name": "Tailored wide trousers",
+      "price": 380,
+      "stock": "in",
+      "retailer": "Arlo",
+      "category": "bottom",
+      "color": "#4C3327",
+      "label": "TROUSERS",
+      "colorName": "deep chocolate brown"
+    },
+    {
+      "id": "callow-suede-loafer",
+      "brand": "CALLOW",
+      "name": "Suede loafer",
+      "price": 150,
+      "stock": "in",
+      "retailer": "Callow",
+      "category": "shoes",
+      "color": "#94643F",
+      "label": "SHOES",
+      "colorName": "tan brown"
+    },
+    {
+      "id": "maren-suede-loafer",
+      "brand": "MAREN",
+      "name": "Soft suede loafer",
+      "price": 180,
+      "stock": "in",
+      "retailer": "Maren",
+      "category": "shoes",
+      "color": "#7E5230",
+      "label": "SHOES",
+      "colorName": "cognac brown"
+    },
+    {
+      "id": "vestra-suede-loafer",
+      "brand": "VESTRA",
+      "name": "Suede loafer",
+      "price": 245,
+      "stock": "in",
+      "retailer": "Vestra",
+      "category": "shoes",
+      "color": "#5E3B25",
+      "label": "SHOES",
+      "colorName": "espresso brown"
+    },
+    {
+      "id": "halden-penny-loafer",
+      "brand": "HALDEN",
+      "name": "Penny loafer",
+      "price": 295,
+      "stock": "low",
+      "retailer": "Rue Market",
+      "category": "shoes",
+      "color": "#8F5F3A",
+      "label": "SHOES",
+      "colorName": "medium tobacco brown"
+    },
+    {
+      "id": "arlo-suede-loafer",
+      "brand": "ARLO",
+      "name": "Unlined suede loafer",
+      "price": 330,
+      "stock": "in",
+      "retailer": "Arlo",
+      "category": "shoes",
+      "color": "#A06C43",
+      "label": "SHOES",
+      "colorName": "tan brown"
+    },
+    {
+      "id": "ode-leather-loafer",
+      "brand": "ODE",
+      "name": "Handsewn leather loafer",
+      "price": 450,
+      "stock": "in",
+      "retailer": "Ode",
+      "category": "shoes",
+      "color": "#6B4127",
+      "label": "SHOES",
+      "colorName": "dark cognac"
+    },
+    {
+      "id": "maren-knit-polo",
+      "brand": "MAREN",
+      "name": "Fine-knit polo",
+      "price": 165,
+      "stock": "in",
+      "retailer": "Maren",
+      "category": "top",
+      "color": "#3E3E42",
+      "label": "KNIT",
+      "colorName": "charcoal grey"
+    },
+    {
+      "id": "ode-cream-trousers",
+      "brand": "ODE",
+      "name": "Wide cream trousers",
+      "price": 210,
+      "stock": "in",
+      "retailer": "Ode",
+      "category": "bottom",
+      "color": "#E8E0CF",
+      "label": "TROUSERS",
+      "colorName": "cream"
+    },
+    {
+      "id": "callow-leather-sneakers",
+      "brand": "CALLOW",
+      "name": "White leather sneakers",
+      "price": 140,
+      "stock": "in",
+      "retailer": "Callow",
+      "category": "shoes",
+      "color": "#F1F0EC",
+      "label": "SHOES",
+      "colorName": "off-white"
+    },
+    {
+      "id": "vestra-bomber",
+      "brand": "VESTRA",
+      "name": "Washed oversized bomber",
+      "price": 290,
+      "stock": "in",
+      "retailer": "Vestra",
+      "category": "outer",
+      "color": "#232326",
+      "label": "JACKET",
+      "colorName": "washed black"
+    },
+    {
+      "id": "callow-hoodie",
+      "brand": "CALLOW",
+      "name": "Heavyweight hoodie",
+      "price": 95,
+      "stock": "in",
+      "retailer": "Callow",
+      "category": "top",
+      "color": "#8C8C8C",
+      "label": "HOODIE",
+      "colorName": "mid grey"
+    },
+    {
+      "id": "arlo-carpenter-jeans",
+      "brand": "ARLO",
+      "name": "Carpenter jeans",
+      "price": 150,
+      "stock": "low",
+      "retailer": "Arlo",
+      "category": "bottom",
+      "color": "#2F3A55",
+      "label": "JEANS",
+      "colorName": "dark indigo"
+    },
+    {
+      "id": "arlo-chunky-trainers",
+      "brand": "ARLO",
+      "name": "Chunky trainers",
+      "price": 185,
+      "stock": "in",
+      "retailer": "Arlo",
+      "category": "shoes",
+      "color": "#9A9A9A",
+      "label": "SHOES",
+      "colorName": "light grey"
+    },
+    {
+      "id": "halden-camel-coat",
+      "brand": "HALDEN",
+      "name": "Long camel wool coat",
+      "price": 640,
+      "stock": "in",
+      "retailer": "Rue Market",
+      "category": "outer",
+      "color": "#B98D5B",
+      "label": "COAT",
+      "long": true,
+      "colorName": "camel"
+    },
+    {
+      "id": "noor-column-dress",
+      "brand": "NOOR STUDIO",
+      "name": "Column knit dress",
+      "price": 240,
+      "stock": "in",
+      "retailer": "Rue Market",
+      "category": "dress",
+      "color": "#EDE6D8",
+      "label": "DRESS",
+      "colorName": "warm ivory"
+    },
+    {
+      "id": "maren-ankle-boots",
+      "brand": "MAREN",
+      "name": "Leather ankle boots",
+      "price": 280,
+      "stock": "in",
+      "retailer": "Maren",
+      "category": "shoes",
+      "color": "#4A2F22",
+      "label": "BOOTS",
+      "colorName": "dark rust brown"
+    },
+    {
+      "id": "ode-structured-bag",
+      "brand": "ODE",
+      "name": "Small structured bag",
+      "price": 320,
+      "stock": "in",
+      "retailer": "Ode",
+      "category": "bag",
+      "color": "#5A3A28",
+      "label": "BAG",
+      "colorName": "chestnut brown"
+    },
+    {
+      "id": "arlo-db-jacket",
+      "brand": "ARLO",
+      "name": "Double-breasted jacket",
+      "price": 540,
+      "stock": "in",
+      "retailer": "Arlo",
+      "category": "outer",
+      "color": "#141414",
+      "label": "JACKET",
+      "colorName": "matte black"
+    },
+    {
+      "id": "vestra-sheer-shirt",
+      "brand": "VESTRA",
+      "name": "Sheer shirt",
+      "price": 180,
+      "stock": "in",
+      "retailer": "Vestra",
+      "category": "top",
+      "color": "#2C2C2E",
+      "label": "SHIRT",
+      "colorName": "soft black"
+    },
+    {
+      "id": "arlo-suit-trousers",
+      "brand": "ARLO",
+      "name": "Suit trousers",
+      "price": 290,
+      "stock": "in",
+      "retailer": "Arlo",
+      "category": "bottom",
+      "color": "#171717",
+      "label": "TROUSERS",
+      "colorName": "matte black"
+    },
+    {
+      "id": "orro-patent-loafers",
+      "brand": "ORRO",
+      "name": "Patent loafers",
+      "price": 360,
+      "stock": "in",
+      "retailer": "Rue Market",
+      "category": "shoes",
+      "color": "#0C0C0C",
+      "label": "SHOES",
+      "colorName": "matte black"
+    },
+    {
+      "id": "ode-linen-jacket",
+      "brand": "ODE",
+      "name": "Unstructured linen jacket",
+      "price": 380,
+      "stock": "in",
+      "retailer": "Ode",
+      "category": "outer",
+      "color": "#EDE7DA",
+      "label": "JACKET",
+      "colorName": "warm ivory"
+    },
+    {
+      "id": "callow-rib-tank",
+      "brand": "CALLOW",
+      "name": "Rib tank",
+      "price": 45,
+      "stock": "in",
+      "retailer": "Callow",
+      "category": "top",
+      "color": "#D6C3A2",
+      "label": "TOP",
+      "colorName": "warm oatmeal beige"
+    },
+    {
+      "id": "ode-linen-suit-trousers",
+      "brand": "ODE",
+      "name": "Linen suit trousers",
+      "price": 240,
+      "stock": "in",
+      "retailer": "Ode",
+      "category": "bottom",
+      "color": "#E6DFD0",
+      "label": "TROUSERS",
+      "colorName": "cream"
+    },
+    {
+      "id": "maren-flat-sandals",
+      "brand": "MAREN",
+      "name": "Flat leather sandals",
+      "price": 160,
+      "stock": "in",
+      "retailer": "Maren",
+      "category": "shoes",
+      "color": "#A77B52",
+      "label": "SANDALS",
+      "colorName": "taupe"
+    },
+    {
+      "id": "callow-denim-jacket",
+      "brand": "CALLOW",
+      "name": "Light denim jacket",
+      "price": 130,
+      "stock": "in",
+      "retailer": "Callow",
+      "category": "outer",
+      "color": "#8FA3BF",
+      "label": "JACKET",
+      "colorName": "faded indigo"
+    },
+    {
+      "id": "callow-cotton-tee",
+      "brand": "CALLOW",
+      "name": "Cotton tee",
+      "price": 35,
+      "stock": "in",
+      "retailer": "Callow",
+      "category": "top",
+      "color": "#F4F4F2",
+      "label": "TEE",
+      "colorName": "off-white"
+    },
+    {
+      "id": "arlo-straight-jeans",
+      "brand": "ARLO",
+      "name": "Straight jeans",
+      "price": 140,
+      "stock": "in",
+      "retailer": "Arlo",
+      "category": "bottom",
+      "color": "#2C3A55",
+      "label": "JEANS",
+      "colorName": "dark indigo"
+    },
+    {
+      "id": "vestra-tan-tote",
+      "brand": "VESTRA",
+      "name": "Tan leather tote",
+      "price": 260,
+      "stock": "in",
+      "retailer": "Vestra",
+      "category": "bag",
+      "color": "#B08457",
+      "label": "BAG",
+      "colorName": "camel"
+    },
+    {
+      "id": "maren-oatmeal-knit",
+      "brand": "MAREN",
+      "name": "Oatmeal crew knit",
+      "price": 190,
+      "stock": "in",
+      "retailer": "Maren",
+      "category": "top",
+      "color": "#D9CBB3",
+      "label": "KNIT",
+      "colorName": "sand"
+    },
+    {
+      "id": "halden-wool-trousers",
+      "brand": "HALDEN",
+      "name": "Wool trousers",
+      "price": 280,
+      "stock": "in",
+      "retailer": "Rue Market",
+      "category": "bottom",
+      "color": "#3C3C40",
+      "label": "TROUSERS",
+      "colorName": "charcoal grey"
+    },
+    {
+      "id": "orro-black-loafers",
+      "brand": "ORRO",
+      "name": "Black leather loafers",
+      "price": 310,
+      "stock": "in",
+      "retailer": "Rue Market",
+      "category": "shoes",
+      "color": "#111111",
+      "label": "SHOES",
+      "colorName": "matte black"
+    },
+    {
+      "id": "halden-black-blazer",
+      "brand": "HALDEN",
+      "name": "Black wool blazer",
+      "price": 480,
+      "stock": "in",
+      "retailer": "Rue Market",
+      "category": "outer",
+      "color": "#161616",
+      "label": "JACKET",
+      "colorName": "matte black"
+    },
+    {
+      "id": "noor-white-shirt",
+      "brand": "NOOR STUDIO",
+      "name": "White poplin shirt",
+      "price": 135,
+      "stock": "in",
+      "retailer": "Rue Market",
+      "category": "top",
+      "color": "#F2F2F0",
+      "label": "SHIRT",
+      "colorName": "off-white"
+    },
+    {
+      "id": "halden-black-trousers",
+      "brand": "HALDEN",
+      "name": "Black tailored trousers",
+      "price": 290,
+      "stock": "in",
+      "retailer": "Rue Market",
+      "category": "bottom",
+      "color": "#181818",
+      "label": "TROUSERS",
+      "colorName": "matte black"
+    },
+    {
+      "id": "ode-black-bag",
+      "brand": "ODE",
+      "name": "Black leather shoulder bag",
+      "price": 420,
+      "stock": "in",
+      "retailer": "Ode",
+      "category": "bag",
+      "color": "#121212",
+      "label": "BAG",
+      "colorName": "matte black"
+    },
+    {
+      "id": "noor-sage-linen-shirt",
+      "brand": "NOOR STUDIO",
+      "name": "Sage linen shirt",
+      "price": 150,
+      "stock": "in",
+      "retailer": "Rue Market",
+      "category": "top",
+      "color": "#9FAE93",
+      "label": "SHIRT",
+      "colorName": "sage green"
+    },
+    {
+      "id": "ode-ecru-trousers",
+      "brand": "ODE",
+      "name": "Ecru drawstring trousers",
+      "price": 170,
+      "stock": "in",
+      "retailer": "Ode",
+      "category": "bottom",
+      "color": "#E9E0CF",
+      "label": "TROUSERS",
+      "colorName": "cream"
+    },
+    {
+      "id": "callow-straw-tote",
+      "brand": "CALLOW",
+      "name": "Straw tote",
+      "price": 90,
+      "stock": "in",
+      "retailer": "Callow",
+      "category": "bag",
+      "color": "#C9A86A",
+      "label": "BAG",
+      "colorName": "camel"
+    }
+  ],
+  "looks": [
+    {
+      "id": "amira-soft-tailoring",
+      "creator": "amira",
+      "ratio": [
+        401,
+        498
+      ],
+      "style": "Tailored",
+      "occasion": "Work",
+      "season": "Spring–Summer",
+      "caption": "Ivory over ecru, beige below, one black bag.",
+      "scene": {
+        "wall": "#D8CCB8",
+        "floor": "#BFAF97",
+        "doorway": "#3A3129",
+        "skin": "#B8876A",
+        "hair": "#231A15",
+        "figTop": 0.163,
+        "figH": 0.7,
+        "cx": 0.5
+      },
+      "pieces": [
+        {
+          "slot": "outer",
+          "product": "ode-linen-jacket",
+          "x": 0.4,
+          "y": 0.33
+        },
+        {
+          "slot": "top",
+          "product": "callow-rib-tank",
+          "x": 0.52,
+          "y": 0.3
+        },
+        {
+          "slot": "bottom",
+          "product": "ode-ecru-trousers",
+          "x": 0.5,
+          "y": 0.63
+        },
+        {
+          "slot": "shoes",
+          "product": "callow-leather-sneakers",
+          "x": 0.53,
+          "y": 0.92
+        },
+        {
+          "slot": "bag",
+          "product": "ode-black-bag",
+          "x": 0.3,
+          "y": 0.55
+        }
+      ]
+    },
+    {
+      "id": "omar-underpass",
+      "creator": "omar",
+      "ratio": [
+        125,
+        224
+      ],
+      "style": "Streetwear",
+      "occasion": "Everyday",
+      "season": "Autumn",
+      "caption": "Washed black, head to toe.",
+      "scene": {
+        "wall": "#6E6F73",
+        "floor": "#4B4C50",
+        "skin": "#8E6248",
+        "hair": "#141414",
+        "figTop": 0.16,
+        "figH": 0.7,
+        "cx": 0.5
+      },
+      "pieces": [
+        {
+          "slot": "outer",
+          "product": "vestra-bomber",
+          "x": 0.42,
+          "y": 0.32
+        },
+        {
+          "slot": "bottom",
+          "product": "halden-black-trousers",
+          "x": 0.5,
+          "y": 0.62
+        },
+        {
+          "slot": "shoes",
+          "product": "arlo-chunky-trainers",
+          "x": 0.5,
+          "y": 0.86
+        }
+      ]
+    },
+    {
+      "id": "lina-grey-minimal",
+      "creator": "lina",
+      "ratio": [
+        133,
+        167
+      ],
+      "style": "Minimal",
+      "occasion": "Everyday",
+      "season": "All seasons",
+      "caption": "A dark overshirt over cream. Nothing else.",
+      "scene": {
+        "wall": "#B9B8B4",
+        "floor": "#9E9D99",
+        "skin": "#C99A7C",
+        "hair": "#3A2A20",
+        "figTop": 0.16,
+        "figH": 0.7,
+        "cx": 0.5
+      },
+      "pieces": [
+        {
+          "slot": "top",
+          "product": "callow-cotton-tee",
+          "x": 0.5,
+          "y": 0.33
+        },
+        {
+          "slot": "bottom",
+          "product": "ode-cream-trousers",
+          "x": 0.48,
+          "y": 0.65
+        },
+        {
+          "slot": "shoes",
+          "product": "arlo-chunky-trainers",
+          "x": 0.45,
+          "y": 0.92
+        }
+      ]
+    },
+    {
+      "id": "karim-street-polo",
+      "creator": "karim",
+      "ratio": [
+        125,
+        224
+      ],
+      "style": "Casual",
+      "occasion": "Everyday",
+      "season": "Autumn",
+      "caption": "Navy polo, dark trousers, old cobbles.",
+      "scene": {
+        "wall": "#6E6F73",
+        "floor": "#4B4C50",
+        "skin": "#8E6248",
+        "hair": "#141414",
+        "figTop": 0.16,
+        "figH": 0.7,
+        "cx": 0.5
+      },
+      "pieces": [
+        {
+          "slot": "top",
+          "product": "maren-knit-polo",
+          "x": 0.5,
+          "y": 0.45
+        },
+        {
+          "slot": "bottom",
+          "product": "halden-black-trousers",
+          "x": 0.5,
+          "y": 0.72
+        },
+        {
+          "slot": "shoes",
+          "product": "orro-black-loafers",
+          "x": 0.52,
+          "y": 0.91
+        }
+      ]
+    },
+    {
+      "id": "karim-lobby",
+      "creator": "karim",
+      "ratio": [
+        71,
+        88
+      ],
+      "style": "Evening",
+      "occasion": "Evening",
+      "season": "All seasons",
+      "caption": "One black suit, brown shoes.",
+      "scene": {
+        "wall": "#3B352F",
+        "floor": "#8C8680",
+        "skin": "#A57558",
+        "hair": "#111111",
+        "figTop": 0.16,
+        "figH": 0.7,
+        "cx": 0.5
+      },
+      "pieces": [
+        {
+          "slot": "outer",
+          "product": "halden-black-blazer",
+          "x": 0.42,
+          "y": 0.35
+        },
+        {
+          "slot": "top",
+          "product": "vestra-sheer-shirt",
+          "x": 0.52,
+          "y": 0.27
+        },
+        {
+          "slot": "bottom",
+          "product": "arlo-suit-trousers",
+          "x": 0.5,
+          "y": 0.62
+        },
+        {
+          "slot": "shoes",
+          "product": "ode-leather-loafer",
+          "x": 0.56,
+          "y": 0.93
+        }
+      ]
+    },
+    {
+      "id": "nour-colonnade",
+      "creator": "nour",
+      "ratio": [
+        335,
+        597
+      ],
+      "style": "Tailored",
+      "occasion": "Weekend",
+      "season": "Autumn",
+      "caption": "A knit over a white shirt, cream below.",
+      "scene": {
+        "wall": "#D9C4A3",
+        "floor": "#C2AC8A",
+        "skin": "#B07A5A",
+        "hair": "#9A4A2A",
+        "bottomColor": "#EDE6D8",
+        "figTop": 0.163,
+        "figH": 0.7,
+        "cx": 0.5,
+        "scarf": true
+      },
+      "pieces": [
+        {
+          "slot": "outer",
+          "product": null,
+          "label": "KNIT VEST",
+          "color": "#5A4232",
+          "x": 0.47,
+          "y": 0.36,
+          "colorName": "chocolate brown"
+        },
+        {
+          "slot": "top",
+          "product": "noor-white-shirt",
+          "x": 0.6,
+          "y": 0.4
+        },
+        {
+          "slot": "bottom",
+          "product": "ode-cream-trousers",
+          "x": 0.45,
+          "y": 0.63
+        },
+        {
+          "slot": "shoes",
+          "product": "orro-black-loafers",
+          "x": 0.4,
+          "y": 0.93
+        }
+      ]
+    },
+    {
+      "id": "amira-rooftop-edit",
+      "creator": "amira",
+      "ratio": [
+        1,
+        1
+      ],
+      "style": "Tailored",
+      "occasion": "Weekend",
+      "season": "All seasons",
+      "caption": "Grey flannel over black, sand suede below.",
+      "scene": {
+        "wall": "#D9DCD8",
+        "floor": "#B5694A",
+        "skin": "#B8876A",
+        "hair": "#231A15",
+        "figTop": 0.3,
+        "figH": 0.55,
+        "cx": 0.42
+      },
+      "pieces": [
+        {
+          "slot": "outer",
+          "product": null,
+          "label": "BLAZER",
+          "color": "#7E8288",
+          "x": 0.44,
+          "y": 0.33,
+          "colorName": "mid grey"
+        },
+        {
+          "slot": "top",
+          "product": "vestra-sheer-shirt",
+          "x": 0.5,
+          "y": 0.31
+        },
+        {
+          "slot": "bottom",
+          "product": "ode-ecru-trousers",
+          "x": 0.52,
+          "y": 0.63
+        },
+        {
+          "slot": "shoes",
+          "product": "arlo-suede-loafer",
+          "x": 0.5,
+          "y": 0.93
+        }
+      ],
+      "editorial": {
+        "kicker": "Because you saved linen tailoring",
+        "headline": [
+          {
+            "text": "The "
+          },
+          {
+            "text": "soft",
+            "italic": true
+          },
+          {
+            "text": " tailoring edit"
+          }
+        ]
+      }
+    },
+    {
+      "id": "omar-washed-cargo",
+      "creator": "omar",
+      "ratio": [
+        4,
+        5
+      ],
+      "style": "Streetwear",
+      "occasion": "Everyday",
+      "season": "All seasons",
+      "caption": "Black shirt, washed cargo, one small bag.",
+      "scene": {
+        "wall": "#6E6F73",
+        "floor": "#4B4C50",
+        "skin": "#8E6248",
+        "hair": "#141414",
+        "figTop": 0.16,
+        "figH": 0.7,
+        "cx": 0.5
+      },
+      "pieces": [
+        {
+          "slot": "top",
+          "product": "vestra-sheer-shirt",
+          "x": 0.44,
+          "y": 0.28
+        },
+        {
+          "slot": "bottom",
+          "product": "arlo-carpenter-jeans",
+          "x": 0.5,
+          "y": 0.62
+        },
+        {
+          "slot": "shoes",
+          "product": "callow-leather-sneakers",
+          "x": 0.52,
+          "y": 0.88
+        },
+        {
+          "slot": "bag",
+          "product": "ode-black-bag",
+          "x": 0.52,
+          "y": 0.4
+        }
+      ]
+    },
+    {
+      "id": "lina-oatmeal-knit",
+      "creator": "lina",
+      "ratio": [
+        365,
+        547
+      ],
+      "style": "Minimal",
+      "occasion": "Everyday",
+      "season": "Spring–Summer",
+      "caption": "Cream on cream, white sneakers.",
+      "scene": {
+        "wall": "#CFC6BD",
+        "floor": "#B3A99D",
+        "skin": "#C99A7C",
+        "hair": "#3A2A20",
+        "figTop": 0.16,
+        "figH": 0.7,
+        "cx": 0.5
+      },
+      "pieces": [
+        {
+          "slot": "top",
+          "product": "ode-silk-shirt",
+          "x": 0.47,
+          "y": 0.33
+        },
+        {
+          "slot": "bottom",
+          "product": "ode-cream-trousers",
+          "x": 0.5,
+          "y": 0.63
+        },
+        {
+          "slot": "shoes",
+          "product": "callow-leather-sneakers",
+          "x": 0.52,
+          "y": 0.92
+        }
+      ]
+    },
+    {
+      "id": "sara-denim-uniform",
+      "creator": "sara",
+      "ratio": [
+        4,
+        5
+      ],
+      "style": "Casual",
+      "occasion": "Weekend",
+      "season": "Spring",
+      "caption": "Blue linen, light denim, an afternoon with a book.",
+      "scene": {
+        "wall": "#C9CCD1",
+        "floor": "#A9ACB0",
+        "skin": "#C28E6E",
+        "hair": "#2B1E17",
+        "figTop": 0.16,
+        "figH": 0.7,
+        "cx": 0.5
+      },
+      "pieces": [
+        {
+          "slot": "top",
+          "product": null,
+          "label": "LINEN SHIRT",
+          "color": "#2B4A8C",
+          "x": 0.5,
+          "y": 0.42,
+          "colorName": "cobalt blue"
+        },
+        {
+          "slot": "bottom",
+          "product": "arlo-straight-jeans",
+          "x": 0.45,
+          "y": 0.68
+        },
+        {
+          "slot": "shoes",
+          "product": "callow-leather-sneakers",
+          "x": 0.35,
+          "y": 0.83
+        }
+      ]
+    },
+    {
+      "id": "amira-black-tailoring",
+      "creator": "amira",
+      "ratio": [
+        4,
+        5
+      ],
+      "style": "Tailored",
+      "occasion": "Work",
+      "season": "All seasons",
+      "caption": "Navy on charcoal, black leather.",
+      "scene": {
+        "wall": "#E4E1DC",
+        "floor": "#CFCAC2",
+        "skin": "#B8876A",
+        "hair": "#231A15",
+        "figTop": 0.163,
+        "figH": 0.7,
+        "cx": 0.5
+      },
+      "pieces": [
+        {
+          "slot": "top",
+          "product": null,
+          "label": "SHIRT",
+          "color": "#1E2A3E",
+          "x": 0.47,
+          "y": 0.3,
+          "colorName": "midnight navy"
+        },
+        {
+          "slot": "bottom",
+          "product": "halden-wool-trousers",
+          "x": 0.48,
+          "y": 0.6
+        },
+        {
+          "slot": "shoes",
+          "product": "orro-black-loafers",
+          "x": 0.56,
+          "y": 0.88
+        },
+        {
+          "slot": "bag",
+          "product": "ode-black-bag",
+          "x": 0.36,
+          "y": 0.47
+        }
+      ]
+    },
+    {
+      "id": "amira-summer-linen",
+      "creator": "amira",
+      "ratio": [
+        193,
+        259
+      ],
+      "style": "Minimal",
+      "occasion": "Weekend",
+      "season": "Summer",
+      "caption": "Brown overshirt, cream pinstripe.",
+      "scene": {
+        "wall": "#E8DCC8",
+        "floor": "#D2C1A5",
+        "skin": "#B8876A",
+        "hair": "#231A15",
+        "figTop": 0.16,
+        "figH": 0.7,
+        "cx": 0.5
+      },
+      "pieces": [
+        {
+          "slot": "top",
+          "product": null,
+          "label": "OVERSHIRT",
+          "color": "#5A4232",
+          "x": 0.5,
+          "y": 0.33,
+          "colorName": "chocolate brown"
+        },
+        {
+          "slot": "bottom",
+          "product": "ode-cream-trousers",
+          "x": 0.5,
+          "y": 0.68
+        },
+        {
+          "slot": "shoes",
+          "product": "maren-suede-loafer",
+          "x": 0.5,
+          "y": 0.93
+        }
+      ]
+    },
+    {
+      "id": "omar-white-hood",
+      "creator": "omar",
+      "ratio": [
+        193,
+        259
+      ],
+      "style": "Streetwear",
+      "occasion": "Everyday",
+      "season": "Autumn",
+      "caption": "White hood, black cargo.",
+      "scene": {
+        "wall": "#6E6F73",
+        "floor": "#4B4C50",
+        "skin": "#8E6248",
+        "hair": "#141414",
+        "figTop": 0.16,
+        "figH": 0.7,
+        "cx": 0.5
+      },
+      "pieces": [
+        {
+          "slot": "top",
+          "product": "callow-hoodie",
+          "x": 0.5,
+          "y": 0.45
+        },
+        {
+          "slot": "bottom",
+          "product": "halden-black-trousers",
+          "x": 0.5,
+          "y": 0.88
+        }
+      ]
+    }
+  ],
+  "feedOrder": [
+    "amira-soft-tailoring",
+    "omar-underpass",
+    "lina-grey-minimal",
+    "karim-street-polo",
+    "karim-lobby",
+    "nour-colonnade",
+    "amira-rooftop-edit",
+    "omar-washed-cargo",
+    "lina-oatmeal-knit",
+    "sara-denim-uniform",
+    "amira-black-tailoring",
+    "amira-summer-linen",
+    "omar-white-hood"
+  ]
+}

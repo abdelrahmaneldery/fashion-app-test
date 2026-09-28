@@ -1,0 +1,12 @@
+.columns {
+  display: flex;
+  gap: var(--layout-gutter);
+  padding: 0 var(--layout-margin) 14px;
+  align-items: flex-start;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}

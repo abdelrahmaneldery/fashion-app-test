@@ -1,0 +1,83 @@
+.base {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 52px;
+  padding: 0 var(--space-24);
+  border-radius: var(--radius-full);
+  transition: opacity 120ms ease, background-color 120ms ease;
+}
+
+/* The one saturated colour in the app, reserved for the action that matters on a screen. */
+.primary {
+  background: var(--c-accent);
+}
+
+.primary:not(:disabled):hover {
+  opacity: 0.92;
+}
+
+.primary:not(:disabled):active {
+  opacity: 0.85;
+}
+
+.primary:disabled {
+  background: var(--c-borderSubtle);
+}
+
+.secondary {
+  background: var(--c-surfaceCard);
+}
+
+.secondary:not(:disabled):hover,
+.secondary:not(:disabled):active {
+  background: var(--c-surfaceSubtle);
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  gap: var(--space-8);
+  min-width: 0;
+}
+
+/* Tertiary is a word, not a box: the label carries the action, underlined unless muted. */
+.tertiary {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  min-width: var(--layout-hit);
+  min-height: 16px;
+  transition: opacity 120ms ease;
+}
+
+/* Restores the 14 px vertical hitSlop the native button had, without changing layout. */
+.tertiary::before {
+  content: '';
+  position: absolute;
+  inset: -14px 0;
+}
+
+.tertiary:not(:disabled):hover {
+  opacity: 0.75;
+}
+
+.tertiary:not(:disabled):active {
+  opacity: 0.6;
+}
+
+.spinner {
+  width: 18px;
+  height: 18px;
+  border: 2px solid currentColor;
+  border-top-color: transparent;
+  border-radius: 50%;
+  animation: spin 700ms linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}

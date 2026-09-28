@@ -1,0 +1,435 @@
+.screen {
+  position: absolute;
+  inset: 0;
+  z-index: 35;
+  display: flex;
+  flex-direction: column;
+  background: var(--c-bgPrimary);
+}
+
+.file {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.bar {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 56px;
+  padding: 0 var(--space-8) 0 var(--space-4);
+}
+
+.title {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  pointer-events: none;
+}
+
+/*
+ * The one action this screen is for. Accent as a ground with white on it, rather than accent as
+ * text on the page — which never reached AA against a dark ground.
+ */
+.post {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  margin-left: auto;
+  height: 36px;
+  padding: 0 18px;
+  border-radius: var(--radius-full);
+  background: var(--c-accent);
+  transition: filter 120ms ease;
+}
+
+.post:disabled {
+  background: var(--c-surfaceSubtle);
+}
+
+.post:not(:disabled):hover {
+  filter: brightness(0.94);
+}
+
+.body {
+  flex: 1;
+  min-height: 0;
+  padding-bottom: var(--space-32);
+}
+
+/* Picker: two choices side by side, then the sources a Look may already live in. */
+.picker {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-16);
+  padding: var(--space-16) var(--layout-margin) 0;
+}
+
+.choices {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-12);
+}
+
+.choice {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* Top-aligned, so the two glyphs sit level even when one title wraps. */
+  justify-content: flex-start;
+  gap: 2px;
+  width: 100%;
+  min-width: 0;
+  min-height: 164px;
+  padding: var(--space-24) var(--space-12) var(--space-16);
+  border-radius: var(--radius-card);
+  /* An outline for the second choice; the first paints over it. */
+  box-shadow: inset 0 0 0 var(--layout-hairline) var(--c-borderSubtle);
+  text-align: center;
+  transition:
+    transform 120ms ease,
+    opacity 120ms ease;
+}
+
+.choice:hover {
+  opacity: 0.88;
+}
+
+.choice:active {
+  transform: scale(0.99);
+}
+
+/* The one to reach for: a filled card that lifts off the page. */
+.choiceLead {
+  background: var(--c-surfaceCard);
+  box-shadow: var(--shadow-float);
+}
+
+.choiceIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  margin-bottom: var(--space-12);
+  border-radius: var(--radius-full);
+  background: var(--c-surfaceSubtle);
+}
+
+.choiceIconLead {
+  background: var(--c-actionPrimary);
+}
+
+.sourcesHead {
+  margin-top: var(--space-8);
+}
+
+/* Detached cards, one platform each; a new platform is one more card. */
+.sourceList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+  margin: calc(var(--space-4) * -1) 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.sourceRow {
+  display: flex;
+  align-items: center;
+  gap: var(--space-12);
+  padding: var(--space-12) var(--space-12) var(--space-12) var(--space-16);
+  border-radius: var(--radius-card);
+  background: var(--c-surfaceCard);
+}
+
+/* The logo line: its own height, so a small wordmark and a 24 px icon start their text on one line. */
+.sourceBrand {
+  display: flex;
+  align-items: center;
+  gap: var(--space-8);
+  min-height: 24px;
+  margin-bottom: 2px;
+}
+
+.sourceText {
+  flex: 1;
+  min-width: 0;
+}
+
+.connect {
+  display: flex;
+  align-items: center;
+  flex: 0 0 auto;
+  height: 36px;
+  padding: 0 16px;
+  border-radius: var(--radius-full);
+  background: var(--c-surfaceSubtle);
+  transition: opacity 120ms ease;
+}
+
+.connect:hover {
+  opacity: 0.8;
+}
+
+.pickerNote {
+  max-width: 300px;
+  margin: var(--space-8) auto 0;
+  text-align: center;
+}
+
+/* Tagging canvas */
+.canvas {
+  position: relative;
+  width: calc(100% - var(--layout-margin) * 2);
+  margin: 0 var(--layout-margin);
+  border-radius: var(--radius-hero);
+  overflow: hidden;
+  background: var(--c-surfaceTile);
+}
+
+.shot {
+  width: 100%;
+  max-height: 60vh;
+  object-fit: cover;
+  display: block;
+}
+
+/* The whole photo is one target: tap it anywhere and a tag lands there. Markers sit above it. */
+.addLayer {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  cursor: crosshair;
+}
+
+/* An authoring marker: the Eyelet, carrying the tag's name while you work. */
+.mark {
+  position: absolute;
+  z-index: 2;
+  width: 28px;
+  height: 28px;
+  transform: translate(-50%, -50%);
+  /* The marker owns the gesture, so dragging it never scrolls the screen underneath. */
+  touch-action: none;
+  cursor: grab;
+}
+
+.mark:active {
+  cursor: grabbing;
+}
+
+.markRing {
+  position: absolute;
+  inset: 0;
+  border: 2px solid #ffffff;
+  border-radius: var(--radius-full);
+  background: rgba(11, 11, 12, 0.35);
+  box-shadow: 0 0 0 1px rgba(11, 11, 12, 0.45);
+  transition: transform 120ms ease;
+}
+
+.mark:hover .markRing,
+.mark:active .markRing {
+  transform: scale(1.12);
+}
+
+.markLabel {
+  position: absolute;
+  left: 34px;
+  top: 50%;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  max-width: 132px;
+  height: 24px;
+  padding: 0 10px;
+  transform: translateY(-50%);
+  border-radius: var(--radius-full);
+  background: rgba(11, 11, 12, 0.72);
+  white-space: nowrap;
+}
+
+/* Near the right edge the label would leave the frame, so it reads back towards the middle. */
+.markLabelLeft {
+  left: auto;
+  right: 34px;
+}
+
+/* The tags written so far */
+.tagsHead {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-24) var(--layout-margin) var(--space-8);
+}
+
+.clear {
+  display: flex;
+  align-items: center;
+  height: 32px;
+  transition: opacity 120ms ease;
+}
+
+.clear:hover {
+  opacity: 0.7;
+}
+
+.tagList {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin: 0;
+  padding: 0 var(--layout-margin);
+  list-style: none;
+}
+
+.tagRow {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  padding: var(--space-8) var(--space-8) var(--space-8) var(--space-12);
+  border-radius: var(--radius-card);
+  background: var(--c-surfaceCard);
+}
+
+.tagMain {
+  display: flex;
+  align-items: center;
+  gap: var(--space-12);
+  flex: 1;
+  min-width: 0;
+  transition: opacity 120ms ease;
+}
+
+.tagMain:hover {
+  opacity: 0.78;
+}
+
+.tagIndex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 26px;
+  width: 26px;
+  height: 26px;
+  border-radius: var(--radius-full);
+  background: var(--c-surfaceSubtle);
+}
+
+.tagText {
+  flex: 1;
+  min-width: 0;
+}
+
+.tagRemove {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 36px;
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-full);
+  transition: background-color 120ms ease;
+}
+
+.tagRemove:hover {
+  background: var(--c-surfaceSubtle);
+}
+
+.tagEmpty {
+  padding: 0 var(--layout-margin);
+}
+
+.slots {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-8);
+  padding: 0 var(--layout-margin);
+}
+
+.slot {
+  display: flex;
+  align-items: center;
+  height: 40px;
+  padding: 0 16px;
+  border-radius: var(--radius-full);
+  background: var(--c-surfaceSubtle);
+  transition: opacity 120ms ease;
+}
+
+.slot:hover {
+  opacity: 0.82;
+}
+
+.slotOn {
+  background: var(--c-actionPrimary);
+}
+
+.group {
+  padding: var(--space-24) var(--layout-margin) var(--space-12);
+}
+
+/* Who can see this Look: one card showing the choice, opening the three to pick from. */
+.audience {
+  display: flex;
+  align-items: center;
+  gap: var(--space-12);
+  width: calc(100% - var(--layout-margin) * 2);
+  min-height: 68px;
+  margin: 0 var(--layout-margin);
+  padding: var(--space-12) var(--space-12) var(--space-12) var(--space-16);
+  border-radius: var(--radius-card);
+  background: var(--c-surfaceCard);
+  text-align: left;
+  transition: opacity 120ms ease;
+}
+
+.audience:hover {
+  opacity: 0.85;
+}
+
+.audienceIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 40px;
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-full);
+  background: var(--c-surfaceSubtle);
+}
+
+.audienceText {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  flex: 1;
+  min-width: 0;
+}
+
+.footer {
+  display: flex;
+  gap: var(--space-8);
+  padding: var(--space-24) var(--layout-margin) 0;
+}
+
+.swap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-8);
+  flex: 1;
+  height: 52px;
+  border-radius: var(--radius-full);
+  background: var(--c-surfaceSubtle);
+  transition: opacity 120ms ease;
+}
+
+.swap:hover {
+  opacity: 0.82;
+}

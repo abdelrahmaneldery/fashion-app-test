@@ -1,0 +1,105 @@
+[
+  {
+    "key": "avatars/amira",
+    "file": "avatars/amira.jpg",
+    "kind": "avatar",
+    "aspect": "1:1",
+    "creator": "amira",
+    "prompt": "Format: 1:1 square portrait. This is the canonical character reference for this creator.\nSubject: Egyptian woman, early thirties. Warm medium-olive skin. Oval face with a defined jawline and straight dark brows. Dark brown, almost black hair, centre-parted and gathered low at the nape. A small mole below the left cheekbone. Minimal makeup, no earrings.\nPose: facing the camera, relaxed natural expression, slight turn of the head.\nComposition: head-and-shoulders portrait, square crop, head occupying roughly 55 percent of the frame height, eyes on the upper third.\nCamera: 85mm, eye level.\nLighting: soft directional window light from camera left, gentle fill on the shadow side.\nBackground: plain warm neutral backdrop, softly out of focus.\nGrade: editorial fashion photography, restrained saturation, warm-neutral white balance, true blacks that are not crushed, premium but natural, realistic skin texture with visible pores, natural fabric weave.\nExclude: no HDR look, no heavy grain, no extreme depth of field, no runway posing, no visible fashion-brand logos or branding of any kind, no text, no watermark, no added graphics, no distorted hands."
+  },
+  {
+    "key": "looks/amira-soft-tailoring",
+    "file": "looks/amira-soft-tailoring.jpg",
+    "kind": "look",
+    "aspect": "2:3",
+    "creator": "amira",
+    "referenceImage": "assets/images/avatars/amira.jpg",
+    "prompt": "Format: 2:3 portrait, full-length editorial fashion photograph.\nSubject: Egyptian woman, early thirties. Warm medium-olive skin. Oval face with a defined jawline and straight dark brows. Dark brown, almost black hair, centre-parted and gathered low at the nape. A small mole below the left cheekbone. Minimal makeup, no earrings.\nWardrobe: warm oatmeal beige linen single-breasted blazer worn open over the top, soft ecru cotton poplin shirt on the upper body, deep chocolate brown pleated wide-leg trousers on the legs, medium tobacco brown suede penny loafers on the feet, a plain matte black bag carried.\nPose: Standing in a slight three-quarter turn towards camera left, weight settled on the back foot, chin level, head and eyes to camera.\nComposition: Full length, head to toe. The subject occupies 65 to 72 percent of the frame height and stands a little left of centre. Feet slightly apart with both loafers completely visible against the ground. The upper ten percent of the frame is calm and uncluttered, reserved for navigation controls.\nCamera: 50mm, eye level, subject parallel to the sensor.\nSetting: a quiet Cairo side street in early morning light, shopfronts far enough behind to fall softly out of focus.\nGrade: editorial fashion photography, restrained saturation, warm-neutral white balance, true blacks that are not crushed, premium but natural, realistic skin texture with visible pores, natural fabric weave.\nRequirement: the trouser waistband is visible where the shirt meets it, so trousers read as a separate block from the blazer.\nRequirement: the tote is carried in the left hand and held away from the torso, with daylight visible between the bag and the hip.\nRequirement: no two garments overlap or obscure one another.\nRequirement: the background immediately behind the body is simple, with nothing that competes with the garments.\nReadability: Every garment is tagged individually in the app, so each one must read on its own: the linen single-breasted blazer clearly visible across the chest and shoulders; the cotton poplin shirt visible at the chest between the open linen single-breasted blazer lapels; the pleated wide-leg trousers silhouette unobstructed from waist to hem; both suede penny loafers completely visible and not cropped by the frame; the bag separated from the body rather than pressed against it.\nExclude: no HDR look, no heavy grain, no extreme depth of field, no runway posing, no visible fashion-brand logos or branding of any kind, no text, no watermark, no added graphics, no distorted hands."
+  },
+  {
+    "key": "products/halden-linen-blazer",
+    "file": "products/halden-linen-blazer.jpg",
+    "kind": "product",
+    "aspect": "3:4",
+    "prompt": "Format: 3:4 portrait, premium e-commerce product photograph, the garment alone with no person.\nProduct: warm oatmeal beige linen single-breasted blazer.\nColour: exactly warm oatmeal beige, matching hex #CDBB9B, consistent under the studio light.\nPresentation: front-facing invisible ghost-mannequin presentation, garment holding a natural three-dimensional shoulder line, lapels sitting correctly and symmetrically, sleeves hanging naturally at the sides, front hanging as the garment is cut.\nFraming: The garment fills 70 to 78 percent of the frame, centred with even margins. Plain seamless linen background, colour #E9E5DE. Soft broad studio light from above and slightly in front, with one subtle natural contact shadow beneath the garment. Straight-on camera perspective with no tilt, identical across the catalogue.\nGrade: editorial fashion photography, restrained saturation, warm-neutral white balance, true blacks that are not crushed, premium but natural.\nExclude: no HDR look, no heavy grain, no extreme depth of field, no runway posing, no visible fashion-brand logos or branding of any kind, no text, no watermark, no added graphics, no distorted hands."
+  },
+  {
+    "key": "products/noor-poplin-shirt",
+    "file": "products/noor-poplin-shirt.jpg",
+    "kind": "product",
+    "aspect": "3:4",
+    "prompt": "Format: 3:4 portrait, premium e-commerce product photograph, the garment alone with no person.\nProduct: soft ecru cotton poplin shirt.\nColour: exactly soft ecru, matching hex #EFE7D6, consistent under the studio light.\nPresentation: front-facing invisible ghost-mannequin presentation, garment holding natural three-dimensional structure, collar and placket keeping their shape, sleeves falling naturally.\nFraming: The garment fills 70 to 78 percent of the frame, centred with even margins. Plain seamless linen background, colour #E9E5DE. Soft broad studio light from above and slightly in front, with one subtle natural contact shadow beneath the garment. Straight-on camera perspective with no tilt, identical across the catalogue.\nGrade: editorial fashion photography, restrained saturation, warm-neutral white balance, true blacks that are not crushed, premium but natural.\nExclude: no HDR look, no heavy grain, no extreme depth of field, no runway posing, no visible fashion-brand logos or branding of any kind, no text, no watermark, no added graphics, no distorted hands."
+  },
+  {
+    "key": "products/halden-pleated-trousers",
+    "file": "products/halden-pleated-trousers.jpg",
+    "kind": "product",
+    "aspect": "3:4",
+    "prompt": "Format: 3:4 portrait, premium e-commerce product photograph, the garment alone with no person.\nProduct: deep chocolate brown pleated wide-leg trousers.\nColour: exactly deep chocolate brown, matching hex #4A3024, consistent under the studio light.\nPresentation: front-facing invisible ghost-mannequin presentation, full length from waistband to hem, natural drape through the leg, waistband and overall silhouette clearly readable.\nFraming: The garment fills 70 to 78 percent of the frame, centred with even margins. Plain seamless linen background, colour #E9E5DE. Soft broad studio light from above and slightly in front, with one subtle natural contact shadow beneath the garment. Straight-on camera perspective with no tilt, identical across the catalogue.\nGrade: editorial fashion photography, restrained saturation, warm-neutral white balance, true blacks that are not crushed, premium but natural.\nExclude: no HDR look, no heavy grain, no extreme depth of field, no runway posing, no visible fashion-brand logos or branding of any kind, no text, no watermark, no added graphics, no distorted hands."
+  },
+  {
+    "key": "products/orro-penny-loafers",
+    "file": "products/orro-penny-loafers.jpg",
+    "kind": "product",
+    "aspect": "3:4",
+    "prompt": "Format: 3:4 portrait, premium e-commerce product photograph, the garment alone with no person.\nProduct: medium tobacco brown suede penny loafers.\nColour: exactly medium tobacco brown, matching hex #8A5A36, consistent under the studio light.\nPresentation: a single shoe photographed at a three-quarter side angle with the toe pointing slightly towards frame left, sitting flat on the surface with a natural contact shadow.\nFraming: The garment fills 70 to 78 percent of the frame, centred with even margins. Plain seamless linen background, colour #E9E5DE. Soft broad studio light from above and slightly in front, with one subtle natural contact shadow beneath the garment. Straight-on camera perspective with no tilt, identical across the catalogue.\nGrade: editorial fashion photography, restrained saturation, warm-neutral white balance, true blacks that are not crushed, premium but natural.\nExclude: no HDR look, no heavy grain, no extreme depth of field, no runway posing, no visible fashion-brand logos or branding of any kind, no text, no watermark, no added graphics, no distorted hands."
+  },
+  {
+    "key": "products/maren-suede-loafer",
+    "file": "products/maren-suede-loafer.jpg",
+    "kind": "product",
+    "aspect": "3:4",
+    "prompt": "Format: 3:4 portrait, premium e-commerce product photograph, the garment alone with no person.\nProduct: cognac brown soft suede loafer.\nColour: exactly cognac brown, matching hex #7E5230, consistent under the studio light.\nPresentation: a single shoe photographed at a three-quarter side angle with the toe pointing slightly towards frame left, sitting flat on the surface with a natural contact shadow.\nFraming: The garment fills 70 to 78 percent of the frame, centred with even margins. Plain seamless linen background, colour #E9E5DE. Soft broad studio light from above and slightly in front, with one subtle natural contact shadow beneath the garment. Straight-on camera perspective with no tilt, identical across the catalogue.\nGrade: editorial fashion photography, restrained saturation, warm-neutral white balance, true blacks that are not crushed, premium but natural.\nExclude: no HDR look, no heavy grain, no extreme depth of field, no runway posing, no visible fashion-brand logos or branding of any kind, no text, no watermark, no added graphics, no distorted hands."
+  },
+  {
+    "key": "avatars/lina",
+    "file": "avatars/lina.jpg",
+    "kind": "avatar",
+    "aspect": "1:1",
+    "creator": "lina",
+    "prompt": "Format: 1:1 square portrait. This is the canonical character reference for this creator.\nSubject: Lebanese woman, late twenties. Fair olive skin with cool undertones. Heart-shaped face with a softly rounded chin. Dark brown hair cut blunt at the collarbone, tucked behind the right ear. Faint freckles across the nose and cheeks. No jewellery.\nPose: facing the camera, relaxed natural expression, slight turn of the head.\nComposition: head-and-shoulders portrait, square crop, head occupying roughly 55 percent of the frame height, eyes on the upper third.\nCamera: 85mm, eye level.\nLighting: soft directional window light from camera left, gentle fill on the shadow side.\nBackground: plain warm neutral backdrop, softly out of focus.\nGrade: editorial fashion photography, restrained saturation, warm-neutral white balance, true blacks that are not crushed, premium but natural, realistic skin texture with visible pores, natural fabric weave.\nExclude: no HDR look, no heavy grain, no extreme depth of field, no runway posing, no visible fashion-brand logos or branding of any kind, no text, no watermark, no added graphics, no distorted hands."
+  },
+  {
+    "key": "looks/lina-grey-minimal",
+    "file": "looks/lina-grey-minimal.jpg",
+    "kind": "look",
+    "aspect": "4:5",
+    "creator": "lina",
+    "referenceImage": "assets/images/avatars/lina.jpg",
+    "prompt": "Format: 4:5 portrait, full-length editorial fashion photograph.\nSubject: Lebanese woman, late twenties. Fair olive skin with cool undertones. Heart-shaped face with a softly rounded chin. Dark brown hair cut blunt at the collarbone, tucked behind the right ear. Faint freckles across the nose and cheeks. No jewellery.\nWardrobe: charcoal grey fine-knit polo on the upper body, cream wide cream trousers on the legs, off-white white leather sneakers on the feet.\nPose: Leaning back against the wall, shoulders touching it, one knee bent with the sole of the shoe flat against the wall. Hands loose at the sides, head turned slightly away from camera.\nComposition: Full length, subject offset to the right third and filling about 80 percent of the frame height. Both sneakers visible.\nCamera: 50mm, slightly below eye level.\nSetting: a pale concrete wall in flat overcast daylight.\nGrade: editorial fashion photography, restrained saturation, warm-neutral white balance, true blacks that are not crushed, premium but natural, realistic skin texture with visible pores, natural fabric weave.\nReadability: Every garment is tagged individually in the app, so each one must read on its own: the fine-knit polo fully visible on the upper body; the wide cream trousers silhouette unobstructed from waist to hem; both white leather sneakers completely visible and not cropped by the frame.\nExclude: no HDR look, no heavy grain, no extreme depth of field, no runway posing, no visible fashion-brand logos or branding of any kind, no text, no watermark, no added graphics, no distorted hands."
+  },
+  {
+    "key": "avatars/omar",
+    "file": "avatars/omar.jpg",
+    "kind": "avatar",
+    "aspect": "1:1",
+    "creator": "omar",
+    "prompt": "Format: 1:1 square portrait. This is the canonical character reference for this creator.\nSubject: Egyptian man, mid twenties. Medium brown skin. Square face with a broad forehead. Short dark curly hair kept tight at the sides. Close-cropped full beard. A small scar through the outer end of the right eyebrow.\nPose: facing the camera, relaxed natural expression, slight turn of the head.\nComposition: head-and-shoulders portrait, square crop, head occupying roughly 55 percent of the frame height, eyes on the upper third.\nCamera: 85mm, eye level.\nLighting: soft directional window light from camera left, gentle fill on the shadow side.\nBackground: plain warm neutral backdrop, softly out of focus.\nGrade: editorial fashion photography, restrained saturation, warm-neutral white balance, true blacks that are not crushed, premium but natural, realistic skin texture with visible pores, natural fabric weave.\nExclude: no HDR look, no heavy grain, no extreme depth of field, no runway posing, no visible fashion-brand logos or branding of any kind, no text, no watermark, no added graphics, no distorted hands."
+  },
+  {
+    "key": "looks/omar-underpass",
+    "file": "looks/omar-underpass.jpg",
+    "kind": "look",
+    "aspect": "3:4",
+    "creator": "omar",
+    "referenceImage": "assets/images/avatars/omar.jpg",
+    "prompt": "Format: 3:4 portrait, full-length editorial fashion photograph.\nSubject: Egyptian man, mid twenties. Medium brown skin. Square face with a broad forehead. Short dark curly hair kept tight at the sides. Close-cropped full beard. A small scar through the outer end of the right eyebrow.\nWardrobe: washed black washed oversized bomber worn open over the top, mid grey heavyweight hoodie on the upper body, dark indigo carpenter jeans on the legs, light grey chunky trainers on the feet.\nPose: Mid-stride walking towards the camera, left leg forward, arms swinging naturally, hood down, looking past the camera to the right.\nComposition: Full length with the motion held. Subject centred, filling about 78 percent of the frame height, both trainers visible with the forward foot flat to the ground.\nCamera: 50mm, eye level, moderate depth of field so the trainers stay sharp.\nSetting: a concrete stairwell landing in hard autumn side light.\nGrade: editorial fashion photography, restrained saturation, warm-neutral white balance, true blacks that are not crushed, premium but natural, realistic skin texture with visible pores, natural fabric weave.\nReadability: Every garment is tagged individually in the app, so each one must read on its own: the washed oversized bomber clearly visible across the chest and shoulders; the heavyweight hoodie visible at the chest between the open front of the washed oversized bomber; the carpenter jeans silhouette unobstructed from waist to hem; both chunky trainers completely visible and not cropped by the frame.\nExclude: no HDR look, no heavy grain, no extreme depth of field, no runway posing, no visible fashion-brand logos or branding of any kind, no text, no watermark, no added graphics, no distorted hands."
+  },
+  {
+    "key": "avatars/nour",
+    "file": "avatars/nour.jpg",
+    "kind": "avatar",
+    "aspect": "1:1",
+    "creator": "nour",
+    "prompt": "Format: 1:1 square portrait. This is the canonical character reference for this creator.\nSubject: Egyptian woman, early thirties. Warm brown skin. Round-oval face with full cheeks. Wears a softly draped hijab that covers the hair completely; the fabric is a plain warm neutral that changes between Looks. Fine gold-rimmed glasses. Calm, direct expression.\nPose: facing the camera, relaxed natural expression, slight turn of the head.\nComposition: head-and-shoulders portrait, square crop, head occupying roughly 55 percent of the frame height, eyes on the upper third.\nCamera: 85mm, eye level.\nLighting: soft directional window light from camera left, gentle fill on the shadow side.\nBackground: plain warm neutral backdrop, softly out of focus.\nGrade: editorial fashion photography, restrained saturation, warm-neutral white balance, true blacks that are not crushed, premium but natural, realistic skin texture with visible pores, natural fabric weave.\nExclude: no HDR look, no heavy grain, no extreme depth of field, no runway posing, no visible fashion-brand logos or branding of any kind, no text, no watermark, no added graphics, no distorted hands."
+  },
+  {
+    "key": "looks/nour-colonnade",
+    "file": "looks/nour-colonnade.jpg",
+    "kind": "look",
+    "aspect": "2:3",
+    "creator": "nour",
+    "referenceImage": "assets/images/avatars/nour.jpg",
+    "prompt": "Format: 2:3 portrait, full-length editorial fashion photograph.\nSubject: Egyptian woman, early thirties. Warm brown skin. Round-oval face with full cheeks. Wears a softly draped hijab that covers the hair completely; the fabric is a plain warm neutral that changes between Looks. Fine gold-rimmed glasses. Calm, direct expression.\nWardrobe: camel long camel wool coat worn open over the top, warm ivory column knit dress on the upper body, dark rust brown leather ankle boots on the feet, chestnut brown small structured bag carried.\nPose: Walking through the colonnade in a three-quarter view to camera, the coat open and moving with the stride, one hand steadying the bag strap at the shoulder.\nComposition: Full length. Subject on the left third, walking into the open right side of the frame. Columns receding behind. Both boots visible.\nCamera: 50mm, eye level.\nSetting: a stone colonnade in low autumn sun, long shadows across the floor.\nGrade: editorial fashion photography, restrained saturation, warm-neutral white balance, true blacks that are not crushed, premium but natural, realistic skin texture with visible pores, natural fabric weave.\nReadability: Every garment is tagged individually in the app, so each one must read on its own: the long camel wool coat clearly visible across the chest and shoulders; the column knit dress visible at the chest between the open long camel wool coat lapels; both leather ankle boots completely visible and not cropped by the frame; the small structured bag separated from the body rather than pressed against it.\nExclude: no HDR look, no heavy grain, no extreme depth of field, no runway posing, no visible fashion-brand logos or branding of any kind, no text, no watermark, no added graphics, no distorted hands."
+  }
+]

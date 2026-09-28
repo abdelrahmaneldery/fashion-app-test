@@ -1,0 +1,48 @@
+.row {
+  position: relative;
+  display: flex;
+  align-items: stretch;
+}
+
+.stretchRow {
+  border-bottom: var(--layout-hairline) solid var(--c-borderSubtle);
+}
+
+.startRow {
+  gap: var(--space-24);
+}
+
+.segment {
+  position: relative;
+  display: flex;
+  align-items: center;
+  transition: opacity 120ms ease;
+}
+
+.stretch {
+  flex: 1;
+  justify-content: center;
+}
+
+.segment:disabled {
+  opacity: 0.3;
+}
+
+.segment:not(:disabled):hover {
+  opacity: 0.8;
+}
+
+/* Restores the vertical hitSlop that kept these on the 44 px touch grid. */
+.segment::before {
+  content: '';
+  position: absolute;
+  inset: -6px 0;
+}
+
+.seam {
+  position: absolute;
+  bottom: 4px;
+  height: var(--layout-seam);
+  background: var(--c-textPrimary);
+  pointer-events: none;
+}

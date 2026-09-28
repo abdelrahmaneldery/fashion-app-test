@@ -1,0 +1,49 @@
+/* Smoked glass on the photograph: present enough to find, quiet enough to leave the picture alone. */
+.overlay {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 34px;
+  width: 34px;
+  height: 34px;
+  border-radius: var(--radius-full);
+  background: rgba(11, 11, 12, 0.46);
+  backdrop-filter: blur(8px);
+  transition: background-color 120ms ease;
+}
+
+.overlay:hover,
+.overlay:active {
+  background: rgba(11, 11, 12, 0.66);
+}
+
+/* Inside a list or a toolbar, where the label would be noise. */
+.disc {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 var(--layout-hit);
+  width: var(--layout-hit);
+  height: var(--layout-hit);
+  border-radius: var(--radius-full);
+  background: var(--c-surfaceSubtle);
+  transition: background-color 120ms ease;
+}
+
+.large {
+  flex: 0 0 52px;
+  width: 52px;
+  height: 52px;
+  background: var(--c-surfaceCard);
+}
+
+.disc:hover,
+.disc:active {
+  background: var(--c-borderSubtle);
+}
+
+.mark {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

@@ -1,0 +1,77 @@
+/*
+ * A solid band under a hairline, with the bar inset in it. The rule is where the feed stops;
+ * the card is where the app's five destinations live.
+ */
+.wrap {
+  position: fixed;
+  left: 50%;
+  bottom: 0;
+  z-index: 30;
+  transform: translateX(-50%);
+  width: min(100%, var(--app-max-width));
+  padding: 10px var(--layout-margin) 12px;
+  padding-bottom: calc(12px + env(safe-area-inset-bottom));
+  border-top: var(--layout-hairline) solid var(--c-borderSubtle);
+  background: var(--c-bgPrimary);
+}
+
+.bar {
+  display: flex;
+  align-items: stretch;
+  height: 64px;
+  border-radius: var(--radius-sm);
+  background: var(--c-surfaceCard);
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  flex: 1;
+  min-width: 0;
+  text-decoration: none;
+  transition: transform 120ms ease;
+}
+
+.item:active {
+  transform: scale(0.94);
+}
+
+.item:not(.active):hover {
+  opacity: 0.75;
+}
+
+.label {
+  white-space: nowrap;
+}
+
+/* The middle destination sits on a disc rather than in the row. */
+.spotlight {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  min-width: 0;
+  transition: transform 120ms ease;
+}
+
+.spotlight:active {
+  transform: scale(0.92);
+}
+
+.disc {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-full);
+  background: var(--c-accent);
+  transition: filter 120ms ease;
+}
+
+.spotlight:hover .disc {
+  filter: brightness(0.94);
+}

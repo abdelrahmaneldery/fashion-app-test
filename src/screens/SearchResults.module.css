@@ -1,0 +1,122 @@
+.screen {
+  position: relative;
+  height: 100%;
+  background: var(--c-bgPrimary);
+}
+
+.feed {
+  height: 100%;
+}
+
+.chrome {
+  position: absolute;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  background: var(--c-bgPrimary);
+}
+
+.statusFill {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 11;
+  background: var(--c-bgPrimary);
+}
+
+.bar {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  padding: 0 var(--space-8) 0 var(--space-4);
+}
+
+.grow {
+  flex: 1;
+  min-width: 0;
+}
+
+.filter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 44px;
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-full);
+  transition: background-color 120ms ease;
+}
+
+.filter:hover {
+  background: var(--c-surfaceSubtle);
+}
+
+.filterOn {
+  background: var(--c-accent);
+}
+
+.filterOn:hover {
+  background: var(--c-accent);
+}
+
+.count {
+  padding: var(--space-8) var(--layout-margin) var(--space-12);
+}
+
+.group {
+  padding: var(--space-16) var(--layout-margin) var(--space-12);
+}
+
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px var(--layout-gutter);
+  padding: 0 var(--layout-margin);
+  align-items: flex-start;
+}
+
+.creatorRow {
+  display: flex;
+  align-items: center;
+  gap: var(--space-12);
+  margin: 0 var(--layout-margin) var(--space-8);
+  padding: var(--space-12);
+  border-radius: var(--radius-card);
+  background: var(--c-surfaceCard);
+  text-decoration: none;
+  color: inherit;
+  transition: transform 120ms ease;
+}
+
+.creatorRow:active {
+  transform: scale(0.99);
+}
+
+.creatorText {
+  flex: 1;
+  min-width: 0;
+}
+
+.empty {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-12);
+  padding: var(--space-48) var(--layout-margin) 0;
+}
+
+.reset {
+  display: flex;
+  align-items: center;
+  height: 48px;
+  margin-top: var(--space-4);
+  padding: 0 24px;
+  border-radius: var(--radius-full);
+  background: var(--c-surfaceSubtle);
+  transition: opacity 120ms ease;
+}
+
+.reset:hover {
+  opacity: 0.8;
+}

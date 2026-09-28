@@ -1,0 +1,134 @@
+{
+  "_comment": "Photography direction for generated imagery. Build-time only — the app never imports this. Prompts are derived from here plus catalog.json by scripts/build_image_prompts.py.",
+  "grade": "editorial fashion photography, restrained saturation, warm-neutral white balance, true blacks that are not crushed, premium but natural",
+  "gradeSubject": "realistic skin texture with visible pores, natural fabric weave",
+  "exclusions": "no HDR look, no heavy grain, no extreme depth of field, no runway posing, no visible fashion-brand logos or branding of any kind, no text, no watermark, no added graphics, no distorted hands",
+  "packshot": {
+    "shared": "The garment fills 70 to 78 percent of the frame, centred with even margins. Plain seamless linen background, colour #E9E5DE. Soft broad studio light from above and slightly in front, with one subtle natural contact shadow beneath the garment. Straight-on camera perspective with no tilt, identical across the catalogue.",
+    "byCategory": {
+      "outer": "front-facing invisible ghost-mannequin presentation, garment holding a natural three-dimensional shoulder line, lapels sitting correctly and symmetrically, sleeves hanging naturally at the sides, front hanging as the garment is cut",
+      "top": "front-facing invisible ghost-mannequin presentation, garment holding natural three-dimensional structure, collar and placket keeping their shape, sleeves falling naturally",
+      "dress": "front-facing invisible ghost-mannequin presentation, full length, natural drape through the skirt, shoulder line and neckline holding their shape",
+      "bottom": "front-facing invisible ghost-mannequin presentation, full length from waistband to hem, natural drape through the leg, waistband and overall silhouette clearly readable",
+      "shoes": "a single shoe photographed at a three-quarter side angle with the toe pointing slightly towards frame left, sitting flat on the surface with a natural contact shadow",
+      "bag": "presented upright and turned roughly twelve degrees from front, handles standing naturally, body holding its own structure"
+    }
+  },
+  "avatar": {
+    "composition": "head-and-shoulders portrait, square crop, head occupying roughly 55 percent of the frame height, eyes on the upper third",
+    "pose": "facing the camera, relaxed natural expression, slight turn of the head",
+    "camera": "85mm, eye level",
+    "lighting": "soft directional window light from camera left, gentle fill on the shadow side",
+    "background": "plain warm neutral backdrop, softly out of focus"
+  },
+  "creators": {
+    "amira": {
+      "name": "Amira Saleh",
+      "reference": "Egyptian woman, early thirties. Warm medium-olive skin. Oval face with a defined jawline and straight dark brows. Dark brown, almost black hair, centre-parted and gathered low at the nape. A small mole below the left cheekbone. Minimal makeup, no earrings."
+    },
+    "lina": {
+      "name": "Lina Mansour",
+      "reference": "Lebanese woman, late twenties. Fair olive skin with cool undertones. Heart-shaped face with a softly rounded chin. Dark brown hair cut blunt at the collarbone, tucked behind the right ear. Faint freckles across the nose and cheeks. No jewellery."
+    },
+    "omar": {
+      "name": "Omar Khaled",
+      "reference": "Egyptian man, mid twenties. Medium brown skin. Square face with a broad forehead. Short dark curly hair kept tight at the sides. Close-cropped full beard. A small scar through the outer end of the right eyebrow."
+    },
+    "nour": {
+      "name": "Nour Hassan",
+      "reference": "Egyptian woman, early thirties. Warm brown skin. Round-oval face with full cheeks. Wears a softly draped hijab that covers the hair completely; the fabric is a plain warm neutral that changes between Looks. Fine gold-rimmed glasses. Calm, direct expression."
+    },
+    "karim": {
+      "name": "Karim Adel",
+      "reference": "Egyptian man, mid thirties. Medium olive skin. Long face with a straight nose and deep-set eyes. Short dark hair neatly side-parted, with a little grey at the temples. Clean shaven."
+    },
+    "sara": {
+      "name": "Sara El-Masry",
+      "reference": "Egyptian woman, late twenties. Warm brown skin. Soft square face. Long dark brown hair, naturally wavy, worn loose past the shoulders. Small gold stud earrings. Easy open expression."
+    }
+  },
+  "looks": {
+    "amira-soft-tailoring": {
+      "role": "hero",
+      "pose": "Standing in a slight three-quarter turn towards camera left, weight settled on the back foot, chin level, head and eyes to camera.",
+      "composition": "Full length, head to toe. The subject occupies 65 to 72 percent of the frame height and stands a little left of centre. Feet slightly apart with both loafers completely visible against the ground. The upper ten percent of the frame is calm and uncluttered, reserved for navigation controls.",
+      "camera": "50mm, eye level, subject parallel to the sensor",
+      "setting": "a quiet Cairo side street in early morning light, shopfronts far enough behind to fall softly out of focus",
+      "constraints": [
+        "the trouser waistband is visible where the shirt meets it, so trousers read as a separate block from the blazer",
+        "the tote is carried in the left hand and held away from the torso, with daylight visible between the bag and the hip",
+        "no two garments overlap or obscure one another",
+        "the background immediately behind the body is simple, with nothing that competes with the garments"
+      ]
+    },
+    "lina-grey-minimal": {
+      "pose": "Leaning back against the wall, shoulders touching it, one knee bent with the sole of the shoe flat against the wall. Hands loose at the sides, head turned slightly away from camera.",
+      "composition": "Full length, subject offset to the right third and filling about 80 percent of the frame height. Both sneakers visible.",
+      "camera": "50mm, slightly below eye level",
+      "setting": "a pale concrete wall in flat overcast daylight"
+    },
+    "omar-underpass": {
+      "pose": "Mid-stride walking towards the camera, left leg forward, arms swinging naturally, hood down, looking past the camera to the right.",
+      "composition": "Full length with the motion held. Subject centred, filling about 78 percent of the frame height, both trainers visible with the forward foot flat to the ground.",
+      "camera": "50mm, eye level, moderate depth of field so the trainers stay sharp",
+      "setting": "a concrete stairwell landing in hard autumn side light"
+    },
+    "nour-colonnade": {
+      "pose": "Walking through the colonnade in a three-quarter view to camera, the coat open and moving with the stride, one hand steadying the bag strap at the shoulder.",
+      "composition": "Full length. Subject on the left third, walking into the open right side of the frame. Columns receding behind. Both boots visible.",
+      "camera": "50mm, eye level",
+      "setting": "a stone colonnade in low autumn sun, long shadows across the floor"
+    },
+    "karim-lobby": {
+      "pose": "Standing asymmetrically with the weight on one hip, both hands in the trouser pockets, jacket open, looking off camera.",
+      "composition": "Full length, subject centred, filling about 75 percent of the frame height.",
+      "camera": "50mm, eye level",
+      "setting": "a terrazzo and brass hotel lobby at night under warm low light"
+    },
+    "lina-oatmeal-knit": {
+      "pose": "Standing at a slight angle, one hand in a trouser pocket, the other holding a coffee cup at her side, looking down the street.",
+      "composition": "Full length, subject on the right third, filling about 78 percent of the frame height.",
+      "camera": "50mm, eye level",
+      "setting": "a quiet winter street in soft grey daylight"
+    },
+    "sara-denim-uniform": {
+      "pose": "Walking across the frame from left to right, the tote carried naturally in the outside hand, head turned back towards camera.",
+      "composition": "Full length in motion, subject centred and filling about 76 percent of the frame height, both sneakers visible.",
+      "camera": "50mm, eye level",
+      "setting": "a leafy pavement on a bright spring morning"
+    },
+    "amira-black-tailoring": {
+      "pose": "Standing square to camera with one foot turned slightly out, the bag held low in one hand, the other arm relaxed.",
+      "composition": "Full length, subject centred, filling about 70 percent of the frame height. Both loafers visible.",
+      "camera": "50mm, eye level",
+      "setting": "a dark marble entrance hall in the evening, one warm light source off frame"
+    },
+    "amira-rooftop-edit": {
+      "pose": "Editorial three-quarter pose, body angled away from camera with the head turned back, one hand lifting the open jacket at the hip.",
+      "composition": "Full length, subject on the left third, filling about 74 percent of the frame height.",
+      "camera": "50mm, eye level, backlit",
+      "setting": "a Cairo rooftop at golden hour with a hazy skyline behind"
+    },
+    "amira-summer-linen": {
+      "pose": "Relaxed walking pose towards the camera, the straw tote swinging in one hand, looking slightly off camera.",
+      "composition": "Full length in motion, subject centred, filling about 76 percent of the frame height, both sandals visible.",
+      "camera": "50mm, eye level",
+      "setting": "a whitewashed wall in bright summer sun with palm shadow falling across it"
+    }
+  },
+  "validationSet": [
+    "avatars/amira",
+    "looks/amira-soft-tailoring",
+    "products/halden-linen-blazer",
+    "products/noor-poplin-shirt",
+    "products/halden-pleated-trousers",
+    "products/orro-penny-loafers",
+    "products/maren-suede-loafer",
+    "avatars/lina",
+    "looks/lina-grey-minimal",
+    "avatars/omar",
+    "looks/omar-underpass",
+    "avatars/nour",
+    "looks/nour-colonnade"
+  ]
+}

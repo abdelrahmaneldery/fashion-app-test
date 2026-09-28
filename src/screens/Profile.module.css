@@ -1,0 +1,180 @@
+.screen {
+  height: 100%;
+  background: var(--c-bgPrimary);
+}
+
+/* Stays put while the grid scrolls, and carries the status area with it. */
+.topBar {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-12);
+  /* The handle on the page margin; the settings disc sits in from the edge, as on Home and Lookbooks. */
+  padding: 0 var(--space-8) 0 var(--layout-margin);
+  background: var(--c-bgPrimary);
+}
+
+.identity {
+  display: flex;
+  align-items: center;
+  gap: var(--space-24);
+  padding: var(--space-8) var(--layout-margin) 0;
+}
+
+.stats {
+  display: flex;
+  flex: 1;
+  min-width: 0;
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1px;
+  flex: 1;
+  min-width: 0;
+  text-align: center;
+  transition: opacity 120ms ease;
+}
+
+a.stat:hover {
+  opacity: 0.7;
+}
+
+.about {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  padding: var(--space-16) var(--layout-margin) 0;
+}
+
+.actions {
+  display: flex;
+  padding: var(--space-16) var(--layout-margin) 0;
+}
+
+/* One action, so it takes the row; a pill, like every other button in the app. */
+.action {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-8);
+  flex: 1;
+  min-width: 0;
+  height: 44px;
+  border-radius: var(--radius-full);
+  background: var(--c-surfaceSubtle);
+  transition: opacity 120ms ease;
+}
+
+.action:hover {
+  opacity: 0.75;
+}
+
+/* Sticks under the top bar, so the grid always has its two headings above it. */
+.tabs {
+  position: sticky;
+  z-index: 9;
+  display: flex;
+  margin-top: var(--space-24);
+  border-top: var(--layout-hairline) solid var(--c-borderSubtle);
+  background: var(--c-bgPrimary);
+}
+
+.tab {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  flex: 1;
+  height: var(--layout-hit);
+  transition: opacity 120ms ease;
+}
+
+.tab:hover {
+  opacity: 0.7;
+}
+
+.underline {
+  position: absolute;
+  bottom: 0;
+  width: 50%;
+  height: 2px;
+  background: var(--c-textPrimary);
+  pointer-events: none;
+}
+
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2px;
+  align-items: flex-start;
+}
+
+.cell {
+  position: relative;
+  overflow: hidden;
+  background: var(--c-surfaceSubtle);
+  transition: opacity 120ms ease;
+}
+
+.cell:hover {
+  opacity: 0.88;
+}
+
+/* Where an image came from, on the photograph the way a Look's piece count is. */
+.source {
+  position: absolute;
+  left: 6px;
+  bottom: 6px;
+}
+
+.runtime {
+  position: absolute;
+  right: 6px;
+  bottom: 6px;
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  filter: drop-shadow(0 1px 2px rgba(11, 11, 12, 0.5));
+  pointer-events: none;
+}
+
+.empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-8);
+  padding: var(--space-48) var(--space-32) 0;
+  text-align: center;
+}
+
+.emptyIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  margin-bottom: var(--space-4);
+  border: var(--layout-hairline) solid var(--c-borderSubtle);
+  border-radius: var(--radius-full);
+}
+
+.emptyAction {
+  display: flex;
+  align-items: center;
+  height: 44px;
+  margin-top: var(--space-8);
+  padding: 0 22px;
+  border-radius: var(--radius-full);
+  background: var(--c-accent);
+  transition: filter 120ms ease;
+}
+
+.emptyAction:hover {
+  filter: brightness(0.94);
+}

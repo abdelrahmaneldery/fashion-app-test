@@ -1,0 +1,63 @@
+.screen {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  /* Ink behind the photograph, so any letterboxing reads as a stage rather than a gap. */
+  background: #0b0b0c;
+}
+
+.stage {
+  position: absolute;
+  inset: 0;
+}
+
+.controls {
+  position: absolute;
+  left: var(--space-8);
+  right: var(--space-8);
+  z-index: 16;
+  display: flex;
+  justify-content: space-between;
+  pointer-events: none;
+}
+
+.controls > * {
+  pointer-events: auto;
+}
+
+.head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 40px;
+  padding: 0 var(--layout-margin);
+}
+
+/*
+ * The feed's rhythm, two across: the same 8 px gutter, 14 px between rows and page margin the
+ * Looks are laid out with anywhere else. The columns are fractions rather than measured pixels,
+ * so a container half a pixel narrower than the window still holds two of them.
+ */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px var(--layout-gutter);
+  padding: var(--space-8) var(--layout-margin) 0;
+  align-content: start;
+}
+
+/* A pin, shaped like every other pin: card radius, photography ground, and a press that answers. */
+.cell {
+  position: relative;
+  min-width: 0;
+  /* 1.5 tall, the same frame every other card photograph stands in. */
+  aspect-ratio: 2 / 3;
+  overflow: hidden;
+  border-radius: var(--radius-card);
+  background: var(--c-surfaceTile);
+  transition: transform 120ms ease;
+}
+
+.cell:active {
+  transform: scale(0.98);
+}

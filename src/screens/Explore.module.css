@@ -1,0 +1,122 @@
+.screen {
+  position: relative;
+  height: 100%;
+  background: var(--c-bgPrimary);
+}
+
+.feed {
+  height: 100%;
+}
+
+.chrome {
+  position: absolute;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  padding: 0 var(--layout-margin) var(--space-12);
+  background: var(--c-bgPrimary);
+}
+
+.statusFill {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 11;
+  background: var(--c-bgPrimary);
+}
+
+.sectionHead {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-12);
+  padding: 0 var(--layout-margin) var(--space-12);
+}
+
+.eyebrow {
+  display: block;
+  margin-bottom: 2px;
+}
+
+.round {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 var(--layout-hit);
+  width: var(--layout-hit);
+  height: var(--layout-hit);
+  border-radius: var(--radius-full);
+  background: var(--c-surfaceSubtle);
+  transition: opacity 120ms ease;
+}
+
+.round:hover {
+  opacity: 0.75;
+}
+
+/* Category tiles: a photograph with the name over it, the way the reference app opens a topic. */
+.tiles {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--layout-gutter);
+  padding: 0 var(--layout-margin);
+}
+
+.tile {
+  position: relative;
+  height: 94px;
+  border-radius: var(--radius-card);
+  overflow: hidden;
+  background: var(--c-surfaceTile);
+  transition: transform 120ms ease;
+}
+
+.tile:active {
+  transform: scale(0.98);
+}
+
+/* Shade only where the name sits, so the top of the photograph stays clean. */
+.tileScrim {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(11, 11, 12, 0.68) 0%,
+    rgba(11, 11, 12, 0.3) 50%,
+    rgba(11, 11, 12, 0) 85%
+  );
+}
+
+.tileLabel {
+  position: absolute;
+  left: var(--space-16);
+  right: var(--space-16);
+  bottom: var(--space-12);
+  text-shadow: 0 1px 6px rgba(11, 11, 12, 0.3);
+}
+
+.rail {
+  gap: var(--space-8);
+  padding: 0 var(--layout-margin);
+}
+
+.creator {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-8);
+  flex: 0 0 96px;
+  width: 96px;
+  padding: var(--space-16) var(--space-8);
+  border-radius: var(--radius-card);
+  background: var(--c-surfaceCard);
+  text-align: center;
+  text-decoration: none;
+  color: inherit;
+  transition: transform 120ms ease;
+}
+
+.creator:active {
+  transform: scale(0.97);
+}

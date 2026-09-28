@@ -1,0 +1,95 @@
+.frame {
+  position: absolute;
+  width: 44px;
+  height: 44px;
+  pointer-events: none;
+}
+
+.hit {
+  position: relative;
+  width: 44px;
+  height: 44px;
+  pointer-events: auto;
+}
+
+.ring {
+  position: absolute;
+  pointer-events: none;
+}
+
+.tagGroup {
+  position: absolute;
+  left: -68px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 180px;
+  pointer-events: none;
+}
+
+/*
+ * The tag clears the whole 44px frame before its thread starts, so it never sits on the Eyelet.
+ * Anchoring to the frame's edge rather than a fixed offset also keeps the gap constant whether
+ * the tag carries one line or two.
+ */
+.above {
+  bottom: calc(100% + 1px);
+}
+
+.below {
+  top: calc(100% + 1px);
+}
+
+/* Beside the Eyelet: the tag and a short level thread, centred on the frame's height. */
+.left,
+.right {
+  top: 0;
+  bottom: 0;
+  flex-direction: row;
+  width: 192px;
+}
+
+.left {
+  left: auto;
+  right: calc(100% + 1px);
+  justify-content: flex-end;
+}
+
+.right {
+  left: calc(100% + 1px);
+  justify-content: flex-start;
+}
+
+.thread {
+  flex: none;
+  width: 1px;
+  height: 18px;
+}
+
+.left .thread,
+.right .thread {
+  width: 12px;
+  height: 1px;
+}
+
+.tag {
+  display: flex;
+  align-items: center;
+  height: 20px;
+  min-width: 0;
+  max-width: 100%;
+  padding: 0 10px;
+  border-radius: var(--radius-full);
+  background: rgba(11, 11, 12, 0.6);
+}
+
+/* With a brand set over it the tag carries two lines, so it reads as a card rather than a pill. */
+.stacked {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1px;
+  height: auto;
+  padding: 5px 10px 6px;
+  border-radius: var(--radius-sm);
+  background: rgba(11, 11, 12, 0.72);
+}

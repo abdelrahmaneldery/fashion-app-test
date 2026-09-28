@@ -1,0 +1,14 @@
+/* The box has the lettering's proportions; cover crops the empty space the file carries above and below. */
+.image {
+  display: block;
+  flex: none;
+  max-width: 100%;
+  object-fit: cover;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+/* A black logo would vanish on a dark surface, so there it is drawn in the page's light ink. */
+.onDark {
+  filter: brightness(0) invert(0.95);
+}

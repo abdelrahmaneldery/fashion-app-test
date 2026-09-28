@@ -1,0 +1,106 @@
+.screen {
+  position: relative;
+  height: 100%;
+  background: var(--c-bgPrimary);
+}
+
+.feed {
+  height: 100%;
+}
+
+/* Sits above the feed and slides away as you read down; any upward scroll brings it back. */
+.chrome {
+  position: absolute;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  background: var(--c-bgPrimary);
+}
+
+.statusFill {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 11;
+  background: var(--c-bgPrimary);
+}
+
+/* Tall enough for the scan button's disc, which sits in from the edge the way Lookbooks' New does. */
+.topBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: var(--layout-hit);
+  padding-left: var(--layout-margin);
+  padding-right: var(--space-8);
+}
+
+.wordmark {
+  margin: 0;
+  color: var(--c-textPrimary);
+  font-size: 26px;
+  /* The lightest cut Figtree ships; thin letters want a little more air between them. */
+  font-weight: 300;
+  line-height: 30px;
+  letter-spacing: 4px;
+}
+
+/* The feed switch, centred on the screen and sitting above the filters it applies to. */
+.modes {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 44px;
+}
+
+/* 10px above the chips opens a clear 16px between the feed switch's underline and the filters. */
+.chips {
+  gap: 6px;
+  padding: 10px var(--layout-margin) 12px;
+  align-items: center;
+  height: 62px;
+}
+
+
+/* Every chip the same size and the same quiet surface; the one you are on takes the ink. */
+.chip {
+  display: flex;
+  align-items: center;
+  flex: 0 0 auto;
+  height: 32px;
+  padding: 0 14px;
+  border-radius: var(--radius-full);
+  background: var(--c-surfaceSubtle);
+  transition:
+    background-color 120ms ease,
+    opacity 120ms ease;
+}
+
+.chip:hover {
+  opacity: 0.8;
+}
+
+.chipOn {
+  background: var(--c-actionPrimary);
+}
+
+.empty {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-16);
+  padding: var(--space-32) var(--layout-margin) 0;
+}
+
+.suggestion {
+  display: flex;
+  align-items: center;
+  gap: var(--space-12);
+}
+
+.suggestionText {
+  flex: 1;
+  min-width: 0;
+}

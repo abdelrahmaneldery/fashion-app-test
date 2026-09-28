@@ -1,0 +1,193 @@
+.screen {
+  position: relative;
+  height: 100%;
+  background: var(--c-bgPrimary);
+}
+
+.feed {
+  height: 100%;
+}
+
+.cover {
+  position: relative;
+  height: 180px;
+  overflow: hidden;
+  background: var(--c-surfaceTile);
+}
+
+/* A Look is photographed head to toe, so a centred crop lands on the waist. Hold the top edge. */
+.coverPhoto {
+  object-position: top;
+}
+
+.coverScrim {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(11, 11, 12, 0.3), rgba(11, 11, 12, 0));
+}
+
+.identity {
+  display: flex;
+  flex-direction: column;
+  padding: 0 var(--layout-margin);
+}
+
+/* The avatar straddles the cover's lower edge, which means it has to be lifted over it: the
+   cover is positioned and this column is not, so without a layer the cover paints on top. */
+.avatar {
+  position: relative;
+  z-index: 1;
+  width: 86px;
+  height: 86px;
+  margin: -30px 0 var(--space-12);
+  padding: 3px;
+  border-radius: var(--radius-full);
+  background: var(--c-bgPrimary);
+}
+
+.stats {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: var(--space-4);
+  margin-top: var(--space-12);
+}
+
+/* Numbers and words share a baseline; the dot between them belongs at the middle of the line. */
+.dot {
+  align-self: center;
+  width: 3px;
+  height: 3px;
+  margin: 0 var(--space-4);
+  border-radius: var(--radius-full);
+  background: var(--c-textMuted);
+}
+
+.bio {
+  margin-top: var(--space-12);
+  max-width: 560px;
+}
+
+.actions {
+  display: flex;
+  gap: var(--space-8);
+  /* Equal halves of the column, capped so they stay buttons rather than bands on a laptop. */
+  max-width: 420px;
+  margin-top: var(--space-16);
+}
+
+.follow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  min-width: 0;
+  height: 48px;
+  border-radius: var(--radius-full);
+  background: var(--c-accent);
+  transition: filter 120ms ease;
+}
+
+.followOn {
+  background: var(--c-surfaceSubtle);
+}
+
+.follow:hover {
+  filter: brightness(0.94);
+}
+
+.secondary {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  min-width: 0;
+  height: 48px;
+  border-radius: var(--radius-full);
+  background: var(--c-surfaceSubtle);
+  transition: opacity 120ms ease;
+}
+
+.secondary:hover {
+  opacity: 0.8;
+}
+
+.tabs {
+  display: flex;
+  /* Margin rather than padding, so the rule stops where the text above it does. */
+  margin: var(--space-24) var(--layout-margin) 0;
+  border-bottom: var(--layout-hairline) solid var(--c-borderSubtle);
+}
+
+.tab {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  flex: 1;
+  min-width: 0;
+  transition: opacity 120ms ease;
+}
+
+/* Restores the 44 px touch target without moving the label off its line. */
+.tab::before {
+  content: '';
+  position: absolute;
+  inset: -10px 0 0;
+}
+
+.tab:hover {
+  opacity: 0.8;
+}
+
+/* The seam belongs to the word, not to the half of the row the word sits in. */
+.tabLabel {
+  position: relative;
+  display: block;
+  padding: 0 2px var(--space-12);
+}
+
+.tabOn .tabLabel::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: var(--layout-seam);
+  border-radius: var(--radius-full);
+  background: var(--c-textPrimary);
+}
+
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px var(--layout-gutter);
+  padding: var(--space-16) var(--layout-margin) 0;
+  align-items: flex-start;
+}
+
+.controls {
+  position: absolute;
+  left: var(--space-8);
+  right: var(--space-8);
+  z-index: 16;
+  display: flex;
+  justify-content: space-between;
+  pointer-events: none;
+}
+
+.controls > *,
+.controlsRight > * {
+  pointer-events: auto;
+}
+
+.controlsRight {
+  display: flex;
+  gap: var(--space-8);
+}
+
+.empty {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+  padding: var(--space-32) var(--layout-margin) 0;
+}

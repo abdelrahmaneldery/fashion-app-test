@@ -1,0 +1,38 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  checks:
+    name: Types, lint, database, build
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - name: Type check
+        run: npm run typecheck
+      - name: Lint
+        run: npm run lint
+      - name: Database schema, access rules and functions
+        run: npm run test:db
+      - name: Seed is in sync with the catalogue
+        run: |
+          pip install pillow
+          npm run seed
+          git diff --exit-code supabase/seed.sql
+      - name: Production bundle compiles
+        env:
+          VITE_APP_VARIANT: production
+        run: npx vite build

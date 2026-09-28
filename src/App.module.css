@@ -1,0 +1,13 @@
+/*
+ * The app is a phone canvas that widens: the column grows to a comfortable maximum and then centres,
+ * so card sizes and line lengths stay close to what the design intends on any screen.
+ */
+.shell {
+  position: relative;
+  width: 100%;
+  max-width: var(--app-max-width);
+  height: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+  background: var(--c-bgPrimary);
+}

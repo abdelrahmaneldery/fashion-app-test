@@ -1,0 +1,100 @@
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  transition: transform 120ms ease;
+}
+
+.card:active {
+  transform: scale(0.98);
+}
+
+/*
+ * Stretched link: the anchor is the card's accessible name and hit area, while the Save button and
+ * tags stay siblings rather than nested inside it — one control per element, as HTML requires.
+ */
+.link::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+/* A smaller corner than the rest of the app's cards: the photograph should read as a picture,
+   not as a tile. */
+.photo {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius-pin);
+  background: var(--c-surfaceTile);
+}
+
+.overlay {
+  z-index: 2;
+}
+
+.pieces {
+  position: absolute;
+  left: var(--space-8);
+  top: var(--space-8);
+}
+
+.ai {
+  position: absolute;
+  left: var(--space-8);
+  bottom: var(--space-8);
+}
+
+.save {
+  position: absolute;
+  right: var(--space-8);
+  bottom: var(--space-8);
+}
+
+/* Two short lines under the picture: the Look, then what it costs and what it is. */
+.meta {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-4);
+  padding: 8px 2px 0;
+  min-height: 48px;
+}
+
+.text {
+  flex: 1;
+  min-width: 0;
+}
+
+.priceLine {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-4);
+  min-width: 0;
+}
+
+/* Gives way first when the column is narrow, so the price is never cut. */
+.style {
+  min-width: 0;
+}
+
+.more {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 22px;
+  height: 20px;
+  z-index: 2;
+  transition: opacity 120ms ease;
+}
+
+/* Keeps the 44px touch target without widening the row. */
+.more::before {
+  content: '';
+  position: absolute;
+  inset: -12px;
+}
+
+.more:hover {
+  opacity: 0.6;
+}

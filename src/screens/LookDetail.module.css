@@ -1,0 +1,295 @@
+.screen {
+  position: relative;
+  height: 100%;
+  background: var(--c-bgPrimary);
+}
+
+.feed {
+  height: 100%;
+}
+
+.locked {
+  overflow: hidden;
+}
+
+/* The photo meets the content on a curve rather than a hard edge. */
+.hero {
+  position: relative;
+  overflow: hidden;
+  border-radius: 0 0 var(--radius-hero) var(--radius-hero);
+  background: var(--c-surfaceTile);
+  touch-action: manipulation;
+}
+
+/* The heart that blooms where you double-tapped. */
+.burst {
+  position: absolute;
+  z-index: 3;
+  display: flex;
+  pointer-events: none;
+  filter: drop-shadow(0 6px 18px rgba(11, 11, 12, 0.35));
+}
+
+.pill {
+  position: absolute;
+  left: var(--layout-margin);
+  bottom: calc(var(--layout-margin) - 6px);
+}
+
+/* The foot of the photo on the right: the AI tag, when there is one, then the lens. */
+.heroRight {
+  position: absolute;
+  right: var(--layout-margin);
+  bottom: var(--layout-margin);
+  display: flex;
+  align-items: center;
+  gap: var(--space-8);
+  transition: opacity 150ms ease;
+}
+
+.creator {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-12);
+  padding: var(--space-24) var(--layout-margin) var(--space-32);
+}
+
+.creatorRow {
+  display: flex;
+  align-items: center;
+  gap: var(--space-12);
+}
+
+.creatorLink {
+  display: flex;
+  align-items: center;
+  gap: var(--space-12);
+  flex: 1;
+  min-width: 0;
+  text-decoration: none;
+  color: inherit;
+  transition: opacity 120ms ease;
+}
+
+.creatorLink:hover {
+  opacity: 0.8;
+}
+
+.creatorText {
+  flex: 1;
+  min-width: 0;
+}
+
+/* A heart and a thread, nudged so their glyphs line up with the avatar's edge above. */
+.social {
+  display: flex;
+  align-items: center;
+  gap: var(--space-8);
+  margin: -4px 0 -4px -8px;
+}
+
+.socialButton {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  min-height: var(--layout-hit);
+  padding: 0 var(--space-8);
+  border-radius: var(--radius-full);
+  transition: opacity 120ms ease;
+}
+
+.socialButton:hover {
+  opacity: 0.75;
+}
+
+.socialGlyph {
+  display: flex;
+}
+
+.preview {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.previewAll {
+  position: relative;
+  align-self: flex-start;
+  transition: opacity 120ms ease;
+}
+
+.previewAll::before {
+  content: '';
+  position: absolute;
+  inset: -10px 0;
+}
+
+.previewAll:hover {
+  opacity: 0.7;
+}
+
+/* Instagram's closing line: your face and an invitation, which opens the thread ready to type. */
+.addComment {
+  display: flex;
+  align-items: center;
+  gap: var(--space-12);
+  min-height: var(--layout-hit);
+  text-align: left;
+  transition: opacity 120ms ease;
+}
+
+.addComment:hover {
+  opacity: 0.75;
+}
+
+.caption {
+  text-align: left;
+  max-width: 640px;
+  cursor: pointer;
+}
+
+.sectionHead {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  padding: 0 var(--layout-margin) var(--space-16);
+}
+
+/*
+ * The summary the whole screen adds up to. Every other card on the feed sits flat; this one is
+ * lifted, so the eye lands on it once the pieces have been read.
+ */
+.total {
+  display: flex;
+  flex-direction: column;
+  margin: 0 var(--layout-margin) var(--space-32);
+  padding: var(--space-16) var(--space-16) var(--space-12);
+  border-radius: var(--radius-card);
+  background: var(--c-surfaceCard);
+  box-shadow: var(--shadow-float);
+}
+
+.totalHead {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--space-8);
+}
+
+/* The number is the point of the card, so it is set at display size. */
+.totalPrice {
+  margin-top: 2px;
+}
+
+.totalPieces {
+  display: flex;
+  align-items: center;
+  gap: var(--space-8);
+  margin-top: var(--space-12);
+  padding-top: var(--space-12);
+  border-top: var(--layout-hairline) solid var(--c-borderSubtle);
+}
+
+.totalThumbs {
+  display: flex;
+  gap: 5px;
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+}
+
+.totalThumb {
+  display: block;
+  flex: 0 0 34px;
+  width: 34px;
+  height: 42px;
+  overflow: hidden;
+  border-radius: var(--radius-xs);
+  background: var(--c-surfaceTile);
+}
+
+.totalRange {
+  flex: 0 0 auto;
+}
+
+.railHead {
+  padding: 0 var(--layout-margin) var(--space-12);
+}
+
+.rail {
+  gap: var(--space-8);
+  padding: 0 var(--layout-margin);
+}
+
+.actionBar {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  gap: var(--space-8);
+  padding: 0 var(--layout-margin);
+  background: var(--c-bgPrimary);
+}
+
+/* The photo's own scrim: it leaves exactly as the compact bar arrives. */
+.scrim {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 15;
+  pointer-events: none;
+  background: linear-gradient(to bottom, rgba(11, 11, 12, 0.6), rgba(11, 11, 12, 0));
+}
+
+.controls {
+  position: absolute;
+  left: var(--space-4);
+  right: var(--space-4);
+  z-index: 16;
+  display: flex;
+  justify-content: space-between;
+  height: var(--layout-hit);
+  pointer-events: none;
+}
+
+.controls > * {
+  pointer-events: auto;
+}
+
+.compact {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 18;
+  display: flex;
+  align-items: center;
+  padding: 0 var(--space-4);
+  border-bottom: var(--layout-hairline) solid var(--c-borderSubtle);
+  background: var(--c-bgPrimary);
+}
+
+.compactTitle {
+  flex: 1;
+  min-width: 0;
+  text-align: center;
+}
+
+/*
+ * Both flanks hold the same width, so the title centres on the screen rather than on whatever is
+ * left over — and it stays centred when the Save button joins the right-hand side on scroll.
+ */
+.compactLead,
+.compactActions {
+  display: flex;
+  flex: 0 0 88px;
+  width: 88px;
+}
+
+.compactActions {
+  justify-content: flex-end;
+}

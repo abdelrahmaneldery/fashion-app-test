@@ -1,0 +1,45 @@
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  transition: opacity 120ms ease;
+}
+
+.card:active {
+  opacity: 0.85;
+}
+
+.link::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+.photo {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius-card);
+  background: var(--c-surfaceTile);
+}
+
+.save {
+  position: absolute;
+  right: var(--space-8);
+  bottom: var(--space-8);
+  z-index: 2;
+}
+
+.meta {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: var(--space-8) 6px 0 6px;
+  min-width: 0;
+}
+
+.priceRow {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-8);
+}

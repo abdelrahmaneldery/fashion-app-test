@@ -1,0 +1,57 @@
+.row {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: var(--space-12);
+  margin: 0 var(--layout-margin) var(--space-8);
+  padding: 10px;
+  border-radius: var(--radius-card);
+  background: var(--c-surfaceCard);
+  transition: transform 120ms ease;
+}
+
+.row:active {
+  transform: scale(0.99);
+}
+
+/* The whole row opens the piece; the Save button sits above it rather than inside it. */
+.open::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+.tile {
+  flex: 0 0 60px;
+  width: 60px;
+  height: 75px;
+  overflow: hidden;
+  border-radius: var(--radius-sm);
+  background: var(--c-surfaceTile);
+}
+
+.dashed {
+  border: 1px dashed var(--c-borderStrong);
+  background: none;
+}
+
+.text {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  min-width: 0;
+}
+
+.lines {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  gap: var(--space-4);
+  min-width: 0;
+}
+
+.save {
+  position: relative;
+  z-index: 2;
+}

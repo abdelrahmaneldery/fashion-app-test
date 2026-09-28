@@ -1,0 +1,146 @@
+.header {
+  display: flex;
+  align-items: center;
+  height: 56px;
+  padding: 0 var(--space-8);
+}
+
+.close {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 44px;
+  width: 44px;
+  height: 44px;
+}
+
+.title {
+  flex: 1;
+  text-align: center;
+}
+
+.group {
+  padding: var(--space-16) var(--layout-margin) var(--space-8);
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 56px;
+  padding: 0 var(--layout-margin);
+  text-align: left;
+  transition: background-color 120ms ease;
+}
+
+.row:hover {
+  background: var(--c-surfaceSubtle);
+}
+
+.rowText {
+  flex: 1;
+  min-width: 0;
+}
+
+.radio {
+  flex: 0 0 22px;
+  width: 22px;
+  height: 22px;
+  border: 2px solid var(--c-borderStrong);
+  border-radius: var(--radius-full);
+}
+
+.radioOn {
+  border-color: var(--c-accent);
+  border-width: 7px;
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-8);
+  padding: 0 var(--layout-margin);
+}
+
+.chip {
+  display: flex;
+  align-items: center;
+  height: 40px;
+  padding: 0 16px;
+  border-radius: var(--radius-full);
+  background: var(--c-surfaceSubtle);
+  transition: opacity 120ms ease;
+}
+
+.chip:hover {
+  opacity: 0.8;
+}
+
+.chipOn {
+  background: var(--c-actionPrimary);
+}
+
+.toggleRow {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 64px;
+  margin-top: var(--space-8);
+  padding: 0 var(--layout-margin);
+  text-align: left;
+}
+
+.check {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 24px;
+  width: 24px;
+  height: 24px;
+  border: 2px solid var(--c-borderStrong);
+  border-radius: var(--radius-tile);
+}
+
+.checkOn {
+  border-color: var(--c-accent);
+  background: var(--c-accent);
+}
+
+.footer {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  gap: var(--space-8);
+  padding: 0 var(--layout-margin);
+  background: var(--c-bgPrimary);
+}
+
+.clear {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  height: 52px;
+  border-radius: var(--radius-full);
+  background: var(--c-surfaceSubtle);
+  transition: opacity 120ms ease;
+}
+
+.apply {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  height: 52px;
+  border-radius: var(--radius-full);
+  background: var(--c-accent);
+  transition: filter 120ms ease;
+}
+
+.clear:hover,
+.apply:hover {
+  filter: brightness(0.94);
+}

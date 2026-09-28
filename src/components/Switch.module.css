@@ -1,0 +1,29 @@
+.track {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex: 0 0 44px;
+  width: 44px;
+  height: 24px;
+  padding: 3px;
+  border-radius: var(--radius-full);
+  background: var(--c-borderSubtle);
+  transition: background-color 150ms ease;
+}
+
+.track[data-on='true'] {
+  justify-content: flex-end;
+  background: var(--c-actionPrimary);
+}
+
+.knob {
+  width: 18px;
+  height: 18px;
+  border-radius: var(--radius-full);
+  background: var(--c-textMuted);
+  transition: background-color 150ms ease;
+}
+
+.track[data-on='true'] .knob {
+  background: var(--c-actionInverse);
+}
